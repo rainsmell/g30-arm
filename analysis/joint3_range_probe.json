@@ -1,0 +1,146 @@
+{
+  "base": 1,
+  "speed": 400,
+  "step": 222,
+  "result": {
+    "neg": {
+      "steps": [
+        {
+          "i": 1,
+          "target": -221,
+          "pos": -219,
+          "short": 2,
+          "vel": 0,
+          "reg2": -116,
+          "fault": 0
+        },
+        {
+          "i": 2,
+          "target": -443,
+          "pos": -441,
+          "short": 2,
+          "vel": 0,
+          "reg2": -109,
+          "fault": 0
+        },
+        {
+          "i": 3,
+          "target": -665,
+          "pos": -560,
+          "short": 105,
+          "vel": 0,
+          "reg2": -5156,
+          "fault": 0
+        }
+      ],
+      "limit": {
+        "step": 3,
+        "target": -665,
+        "pos": -560,
+        "short": 105,
+        "fault": 0
+      }
+    },
+    "pos": {
+      "steps": [
+        {
+          "i": 1,
+          "target": 223,
+          "pos": 222,
+          "short": -1,
+          "vel": 0,
+          "reg2": 49,
+          "fault": 0
+        },
+        {
+          "i": 2,
+          "target": 445,
+          "pos": 443,
+          "short": -2,
+          "vel": 0,
+          "reg2": 128,
+          "fault": 0
+        },
+        {
+          "i": 3,
+          "target": 667,
+          "pos": 666,
+          "short": -1,
+          "vel": 0,
+          "reg2": 77,
+          "fault": 0
+        },
+        {
+          "i": 4,
+          "target": 889,
+          "pos": 888,
+          "short": -1,
+          "vel": 0,
+          "reg2": 61,
+          "fault": 0
+        },
+        {
+          "i": 5,
+          "target": 1111,
+          "pos": 1109,
+          "short": -2,
+          "vel": 0,
+          "reg2": 111,
+          "fault": 0
+        },
+        {
+          "i": 6,
+          "target": 1333,
+          "pos": 1331,
+          "short": -2,
+          "vel": 0,
+          "reg2": 150,
+          "fault": 0
+        },
+        {
+          "i": 7,
+          "target": 1555,
+          "pos": 1553,
+          "short": -2,
+          "vel": 0,
+          "reg2": 99,
+          "fault": 0
+        },
+        {
+          "i": 8,
+          "target": 1777,
+          "pos": 1775,
+          "short": -2,
+          "vel": 0,
+          "reg2": 197,
+          "fault": 0
+        },
+        {
+          "i": 9,
+          "target": 1999,
+          "pos": 1997,
+          "short": -2,
+          "vel": 0,
+          "reg2": 182,
+          "fault": 0
+        },
+        {
+          "i": 10,
+          "target": 2221,
+          "pos": 2154,
+          "short": -67,
+          "vel": 0,
+          "reg2": 5276,
+          "fault": 0
+        }
+      ],
+      "limit": {
+        "step": 10,
+        "target": 2221,
+        "pos": 2154,
+        "short": -67,
+        "fault": 0
+      }
+    }
+  }
+}

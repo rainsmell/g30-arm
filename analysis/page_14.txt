@@ -1,0 +1,104 @@
+  GD32F103xx Datasheet 
+13 
+ 
+Figure 2-2. GD32F103xC/D/E/F/G/I/K block diagram 
+ICodeDCodeSystem
+NVIC
+TPIU SW/JTAG
+Flash
+Memory
+SRAM
+Controller SRAM
+AHB to APB 
+Bridge 2
+AHB to APB 
+Bridge 1
+DMA0
+7chs
+USART0
+SPI0
+ADC0
+ADC1
+GPIOA
+GPIOB
+TIMER4
+TIMER2
+TIMER1
+WWDGT
+CAN0
+12-bit
+SAR ADC
+Slave
+Slave
+Slave
+Slave Slave
+Master
+ARM Cortex-M3 
+Processor
+Fmax: 108MHz
+Ibus
+Dbus
+Interrput request
+APB2: Fmax = 108MHz
+POR/PDR
+PLL
+Fmax: 108MHz
+LDO
+1.2V
+IRC
+8MHz
+HXTAL
+4-16MHz
+LVD
+Powered By VDDA
+Master
+SPI1/I2S1
+USART1
+USART2
+I2C0
+I2C1
+Powered By VDDA
+APB1: Fmax = 54MHz
+USBD
+GPIOC
+GPIOD
+GPIOE
+TIMER0
+Slave
+EXMC
+Master
+DMA1
+5chs
+GPIOG
+GPIOF
+ADC2
+TIMER9
+TIMER8
+EXTI
+TIMER10
+TIMER7
+TIMER3
+TIMER11
+TIMER12
+TIMER13
+UART3
+UART4
+SPI2/I2S2
+TIMER6
+DAC0
+Flash
+Memory
+Flash Memory 
+Controller 1
+Flash Memory 
+Controller 2
+SDIO
+Slave
+: Blocks are available in GD 32F103xF/G/I/K devices
+TIMER5
+AHB Peripherals
+FMC CRC RCU
+FWDGT
+RTC
+AHB Matrix: Fmax = 108MHz
+ 

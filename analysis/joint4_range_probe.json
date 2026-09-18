@@ -1,0 +1,109 @@
+{
+  "base": -497,
+  "speed": 400,
+  "step": 222,
+  "result": {
+    "\u8d1f\u65b9\u5411": {
+      "steps": [
+        {
+          "i": 1,
+          "target": -719,
+          "pos": -717,
+          "short": 2,
+          "err": -123,
+          "fault": 0
+        },
+        {
+          "i": 2,
+          "target": -941,
+          "pos": -933,
+          "short": 8,
+          "err": -4629,
+          "fault": 0
+        }
+      ],
+      "limit": {
+        "step": 2,
+        "target": -941,
+        "pos": -933,
+        "short": 8,
+        "err": -4629
+      }
+    },
+    "\u6b63\u65b9\u5411": {
+      "steps": [
+        {
+          "i": 1,
+          "target": -275,
+          "pos": -277,
+          "short": -2,
+          "err": 51,
+          "fault": 0
+        },
+        {
+          "i": 2,
+          "target": -53,
+          "pos": -55,
+          "short": -2,
+          "err": 94,
+          "fault": 0
+        },
+        {
+          "i": 3,
+          "target": 169,
+          "pos": 167,
+          "short": -2,
+          "err": 179,
+          "fault": 0
+        },
+        {
+          "i": 4,
+          "target": 391,
+          "pos": 389,
+          "short": -2,
+          "err": 228,
+          "fault": 0
+        },
+        {
+          "i": 5,
+          "target": 613,
+          "pos": 611,
+          "short": -2,
+          "err": 150,
+          "fault": 0
+        },
+        {
+          "i": 6,
+          "target": 835,
+          "pos": 837,
+          "short": 2,
+          "err": 51,
+          "fault": 0
+        },
+        {
+          "i": 7,
+          "target": 1057,
+          "pos": 1055,
+          "short": -2,
+          "err": 305,
+          "fault": 0
+        },
+        {
+          "i": 8,
+          "target": 1279,
+          "pos": 1086,
+          "short": -193,
+          "err": 4619,
+          "fault": 0
+        }
+      ],
+      "limit": {
+        "step": 8,
+        "target": 1279,
+        "pos": 1086,
+        "short": -193,
+        "err": 4619
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-09-13 22:17:50",
+  "pose": "完全收拢（限位开关处于按压状态）",
+  "reference_deg": 0.0,
+  "J3": {
+    "slave": 3,
+    "pos_counts": 1,
+    "pos_deg_raw": 0.09,
+    "err": 15,
+    "reg0x18": 0,
+    "identity": "2/0x67C6/0xD81D"
+  },
+  "J4": {
+    "slave": 4,
+    "pos_counts": 8,
+    "pos_deg_raw": 0.72,
+    "err": 17,
+    "reg0x18": 1,
+    "identity": "2/0x67C6/0xD824"
+  },
+  "stable": true
+}

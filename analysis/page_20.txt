@@ -1,0 +1,49 @@
+  GD32F103xx Datasheet 
+19 
+ 
+Pre-defined 
+Regions 
+Bus Address Peripherals 
+APB2 
+0x4001 7C00 - 0x4001 7FFF Reserved 
+0x4001 7800 - 0x4001 7BFF Reserved 
+0x4001 7400 - 0x4001 77FF Reserved 
+0x4001 7000 - 0x4001 73FF Reserved 
+0x4001 6C00 - 0x4001 6FFF Reserved 
+0x4001 6800 - 0x4001 6BFF Reserved 
+0x4001 5C00 - 0x4001 67FF Reserved 
+0x4001 5800 - 0x4001 5BFF Reserved 
+0x4001 5400 - 0x4001 57FF TIMER10 
+0x4001 5000 - 0x4001 53FF TIMER9 
+0x4001 4C00 - 0x4001 4FFF TIMER8 
+0x4001 4800 - 0x4001 4BFF Reserved     
+0x4001 4400 - 0x4001 47FF Reserved     
+0x4001 4000 - 0x4001 43FF Reserved     
+0x4001 3C00 - 0x4001 3FFF ADC2  
+0x4001 3800 - 0x4001 3BFF USART0  
+0x4001 3400 - 0x4001 37FF TIMER7 
+0x4001 3000 - 0x4001 33FF SPI0         
+0x4001 2C00 - 0x4001 2FFF TIMER0 
+0x4001 2800 - 0x4001 2BFF ADC1         
+0x4001 2400 - 0x4001 27FF ADC0         
+0x4001 2000 - 0x4001 23FF GPIOG  
+0x4001 1C00 - 0x4001 1FFF GPIOF  
+0x4001 1800 - 0x4001 1BFF GPIOE  
+0x4001 1400 - 0x4001 17FF GPIOD  
+0x4001 1000 - 0x4001 13FF GPIOC  
+0x4001 0C00 - 0x4001 0FFF GPIOB  
+0x4001 0800 - 0x4001 0BFF GPIOA  
+0x4001 0400 - 0x4001 07FF EXTI         
+0x4001 0000 - 0x4001 03FF AFIO         
+APB1 
+0x4000 CC00 - 0x4000 FFFF Reserved                        
+0x4000 C800 - 0x4000 CBFF Reserved                        
+0x4000 C400 - 0x4000 C7FF Reserved 
+0x4000 C000 - 0x4000 C3FF Reserved                      
+0x4000 8000 - 0x4000 BFFF Reserved                      
+0x4000 7C00 - 0x4000 7FFF Reserved                      
+0x4000 7800 - 0x4000 7BFF Reserved                      
+0x4000 7400 - 0x4000 77FF DAC0                             
+0x4000 7000 - 0x4000 73FF PMU              
+0x4000 6C00 - 0x4000 6FFF BKP          
+0x4000 6800 - 0x4000 6BFF Reserved                      

@@ -1,0 +1,93 @@
+================================================================================
+夹爪摄像头 USB 描述符存档（在 Windows 上抓取，设备在线时）
+设备: USB\VID_0C45&PID_636B  (Sonix), 序列号字符串 "SN0001"
+抓取时间: 2026-09-13
+抓取方式: ctypes + libusb 的 libusb_get_config_descriptor()，读取的是设备上报的原始描述符
+================================================================================
+
+### DEVICE DESCRIPTOR
+bcdUSB            = 0x0200   (USB 2.0)
+bDeviceClass      = 0xEF     (Miscellaneous / IAD)
+bDeviceSubClass   = 0x02
+bDeviceProtocol   = 0x01
+bMaxPacketSize0   = 64
+idVendor          = 0x0C45   (Sonix Technology)
+idProduct         = 0x636B
+bcdDevice         = 0x0100
+bNumConfigurations= 1
+bus speed         = High-Speed (480 Mbps)
+(iManufacturer / iProduct / iSerialNumber 未采集；Windows 侧序列号显示为 "SN0001")
+
+### CONFIGURATION 1
+wTotalLength   = 592
+bNumInterfaces = 2
+bMaxPower      = 250 (x2mA) = 500 mA
+
+--------------------------------------------------------------------------------
+INTERFACE 0  alt 0   class=0x0E(Video) sub=0x01(VideoControl) proto=0x00  nEndpoints=1
+  std : 09 04 00 00 01 0e 01 00 00
+  ep  : 07 05 83 03 10 00 06      <- EP 0x83 IN, Interrupt, wMaxPacketSize=16, bInterval=6  (UVC 状态中断端点)
+  class-specific (80 bytes):
+0d240100015000c0e1e40001010924030401010003001d2406037033f02811632e4aba2c6890eb334016200102049f070f07001224020101020000000000000000030e00000b240502010000027f1700
+
+  # 解析（注意顺序！）:
+  #  0d 24 01 00 01 50 00 c0 e1 e4 00 01 01   VC_HEADER  bcdUVC=0x0100 totalLen=0x0050 clock=0x00e1e4c0 bInCollection=1 iface=1
+  #  09 24 03 04 01 01 00 03 00               VC_OUTPUT_TERMINAL  ID=4 type=0x0101 assoc=0 src=3
+  #  1d 24 06 03 <GUID> 20 01 02 04 9f070f07 00
+  #                                            VC_EXTENSION_UNIT  ID=3 GUID=28F03370-6311-4A2E-BA2C-6890EB334016
+  #                                            bNumControls=32 bNrInPins=1 src=2 bControlSize=4 bmControls=9F070F07
+  #  12 24 02 01 01 02 00 00 0000 0000 0000 03 0e0000
+  #                                            VC_INPUT_TERMINAL ID=1 ITT_CAMERA(0x0201) bControlSize=3 bmControls=0x00000E
+  #  0b 24 05 02 01 00 00 02 7f 17 00         VC_PROCESSING_UNIT ID=2 src=1 bControlSize=2 bmControls=0x177F
+  #
+  #  ⚠ 顺序为 Header -> Output -> XU -> Input -> Processing，
+  #    被引用的单元(2,1)排在其引用者之后，违反 UVC 依赖顺序。Windows usbvideo.sys 解析异常。
+
+--------------------------------------------------------------------------------
+INTERFACE 1  alt 0   class=0x0E(Video) sub=0x02(VideoStreaming) proto=0x00  nEndpoints=0
+  std : 09 04 01 00 00 0e 02 00 00
+  class-specific (369 bytes):
+0f24010271018100040000000100000b2406010400010000000032240701004006840300d0dd0600e032294df42b00151605000615160500801a060020a107002a2c0a0040420f0080841e0032240702004006b00400c027090080ee364d9a3a00151605000615160500801a060020a107002a2c0a0040420f0080841e0032240703008002e001000077010000ca084d620900151605000615160500801a060020a107002a2c0a0040420f0080841e0032240704004006840300d0dd0600e032294df42b00151605000615160500801a060020a107002a2c0a0040420f0080841e001b240402035955593200001000800000aa00389b711001000000001e240501004006b00400c0270900c0270900983a0080841e000180841e0032240502008002e001000077010000ca0800600900151605000615160500801a060020a107002a2c0a0040420f0080841e001e240503004006b00400c0270900c0270900983a0080841e000180841e0006240d010104
+
+  # 解析（VS 子类型）:
+  #  0f 24 01 02 71 01 81 00 04 00 00 00 01 00 00
+  #     VS_INPUT_HEADER  nFormats=2 wTotalLength=0x0171=369 ep=0x81 bTerminalLink=4 bControlSize=1 bmaControls=0x00
+  #  MJPEG 格式 1（4 个帧描述符）:
+  #    0b 24 06 01 04 00 01 00 00 00 00                VS_FORMAT_MJPEG fmtIdx=1 nFrame=4 bmFlags=0 bDefaultFrame=1
+  #    帧: 1600x900   minBW=115200000  maxBW=691200000  maxFrameSize=2880589  defInterval=0.0333s  intervals={0.033,0.04,0.05,0.067,0.1,0.2}
+  #    帧: 1600x1200  minBW=153600000  maxBW=921600000  maxFrameSize=3840589  defInterval=0.0333s  同上 intervals
+  #    帧: 640x480    minBW=24576000   maxBW=147456000  maxFrameSize=614989   defInterval=0.0333s  同上 intervals
+  #    帧: 1600x900   (与第 1 个重复)
+  #  1b 24 04 02 03 59555932-0000-0010-8000-00AA00389B71 10 01 00 00 00 00
+  #     VS_FORMAT_UNCOMPRESSED fmtIdx=2 nFrame=3 guidFormat=YUY2(32595559-0000-0010-8000-00AA00389B71) bpp=16 bDefaultFrame=1
+  #    帧: 1600x1200  5fps  maxFrameSize=3840000
+  #    帧: 640x480    30fps maxFrameSize=614400
+  #    帧: 1600x1200  (重复)
+  #  06 24 0d 01 01 04                             VS_COLORFORMAT bColorPrimaries=1 bTransfer=1 bMatrix=4
+
+INTERFACE 1  alt 1   class=0x0E/0x02  nEndpoints=1
+  std : 09 04 01 01 01 0e 02 00 00
+  ep  : 07 05 81 05 80 00 01      <- EP 0x81 IN, Isochronous, wMaxPacketSize=128, bInterval=1
+INTERFACE 1  alt 2
+  std : 09 04 01 02 01 0e 02 00 00
+  ep  : 07 05 81 05 00 01 01      <- 256 bytes/microframe
+INTERFACE 1  alt 3
+  std : 09 04 01 03 01 0e 02 00 00
+  ep  : 07 05 81 05 20 03 01      <- 800
+INTERFACE 1  alt 4
+  std : 09 04 01 04 01 0e 02 00 00
+  ep  : 07 05 81 05 20 0b 01      <- 2848 (2 x 800)
+INTERFACE 1  alt 5
+  std : 09 04 01 05 01 0e 02 00 00
+  ep  : 07 05 81 05 20 13 01      <- 4896 (3 x 800)
+INTERFACE 1  alt 6
+  std : 09 04 01 06 01 0e 02 00 00
+  ep  : 07 05 81 05 00 14 01      <- 5120 (3 x 1024)
+
+================================================================================
+在 Linux 上重新抓取（更权威，含字符串描述符）:
+    sudo apt install usbutils
+    sudo lsusb -v -d 0c45:636b
+    # 或
+    lsusb -d 0c45:636b -v 2>/dev/null | tee descriptors_linux.txt
+================================================================================

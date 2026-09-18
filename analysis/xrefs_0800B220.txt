@@ -1,0 +1,190 @@
+# Xrefs to 0800b220
+
+## 08008cbe -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008caa: strb     r4, [r7,#0x5]
+  08008cac: str      r4, [r7,#0x28]
+  08008cae: strb     r4, [r7,#0x8]
+  08008cb0: strh.w   r4, [r5,#0x40]
+  08008cb4: bl       0x0800b004
+  08008cb8: strb     r0, [r7,#0x3]
+  08008cba: sxtb     r1, r0
+  08008cbc: movs     r0, #0x1
+> 08008cbe: bl       0x0800b220
+  08008cc2: b        0x08008d30
+  08008cc4: strb     r4, [r7,#0x5]
+  08008cc6: strh.w   r9, [r5,#0x2]
+  08008cca: strb     r6, [r7,#0x9]
+  08008ccc: ldrh     r0, [r7,#0xe]
+  08008cce: vmov     s1, r0
+  08008cd2: vcvt.f32.u32 s1, s1
+  08008d04: movs     r0, #0x5a
+  08008d06: strb.w   r10, [r7,#0x6]
+
+## 08008d9e -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008d8a: strb     r4, [r7,#0x2]
+  08008d8c: str      r4, [r7,#0x28]
+  08008d8e: strh.w   r4, [r5,#0x40]
+  08008d92: bl       0x0800b004
+  08008d96: strb     r0, [r7,#0x3]
+  08008d98: rsbs     r0, r0
+  08008d9a: sxtb     r1, r0
+  08008d9c: movs     r0, #0x1
+> 08008d9e: bl       0x0800b220
+  08008da2: b        0x08008e0e
+  08008da4: strb     r4, [r7,#0x5]
+  08008da6: strh.w   r9, [r5,#0x2]
+  08008daa: strb     r6, [r7,#0x9]
+  08008dac: ldrh     r0, [r7,#0xe]
+  08008dae: vmov     s1, r0
+  08008db2: vcvt.f32.u32 s1, s1
+  08008db6: vcmpe.f32 s0, s1
+  08008dba: vmrs     apsr, fpscr
+
+## 08008dcc -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008dba: vmrs     apsr, fpscr
+  08008dbe: ble      0x08008de0
+  08008dc0: str      r3, [r7,#0x2c]
+  08008dc2: ldrh     r0, [r7,#0x10]
+  08008dc4: cmp      r3, r0
+  08008dc6: bcc      0x08008e0e
+  08008dc8: movs     r1, #0x0
+  08008dca: movs     r0, #0x1
+> 08008dcc: bl       0x0800b220
+  08008dd0: str      r4, [r7,#0x2c]
+  08008dd2: strb     r4, [r7,#0x2]
+  08008dd4: strh.w   r11, [r7,#0x12]
+  08008dd8: movw     r0, #0xfc1a
+  08008ddc: strh     r0, [r5,#0x2e]
+  08008dde: b        0x08008e0e
+  08008de0: str      r4, [r7,#0x2c]
+  08008de2: b        0x08008e0e
+  08008de4: strb.w   r10, [r7,#0x7]
+
+## 08008e3c -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008e2c: subs     r2, r2, r3
+  08008e2e: cmp      r2, #0x0
+  08008e30: ble      0x08008e42
+  08008e32: strb     r4, [r7,#0x5]
+  08008e34: subs     r0, r0, r1
+  08008e36: str      r4, [r7,#0x28]
+  08008e38: sxtb     r1, r0
+  08008e3a: movs     r0, #0x1
+> 08008e3c: bl       0x0800b220
+  08008e40: b        0x08008e5c
+  08008e42: strb     r4, [r7,#0x8]
+  08008e44: adds     r1, r1, #0x1
+  08008e46: strb     r1, [r7,#0x2]
+  08008e48: movs     r1, #0x0
+  08008e4a: movs     r0, #0x1
+  08008e4c: bl       0x0800b220
+  08008e50: movs     r0, #0x2
+  08008e52: strb     r0, [r7,#0x5]
+
+## 08008e4c -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008e3a: movs     r0, #0x1
+  08008e3c: bl       0x0800b220
+  08008e40: b        0x08008e5c
+  08008e42: strb     r4, [r7,#0x8]
+  08008e44: adds     r1, r1, #0x1
+  08008e46: strb     r1, [r7,#0x2]
+  08008e48: movs     r1, #0x0
+  08008e4a: movs     r0, #0x1
+> 08008e4c: bl       0x0800b220
+  08008e50: movs     r0, #0x2
+  08008e52: strb     r0, [r7,#0x5]
+  08008e54: b        0x08008e66
+  08008e56: strh.w   r9, [r5,#0x2]
+  08008e5a: strb     r6, [r7,#0x9]
+  08008e5c: ldrb     r0, [r7,#0x5]
+  08008e5e: cmp      r0, #0x1
+  08008e60: beq      0x08008e66
+  08008e62: cmp      r0, #0x2
+
+## 08008e9a -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008e88: bl       0x0800b004
+  08008e8c: strb     r0, [r7,#0x4]
+  08008e8e: ldrb     r1, [r7,#0x5]
+  08008e90: cmp      r1, #0x1
+  08008e92: beq      0x08008e96
+  08008e94: rsbs     r0, r0
+  08008e96: sxtb     r1, r0
+  08008e98: movs     r0, #0x1
+> 08008e9a: bl       0x0800b220
+  08008e9e: strb     r4, [r7,#0x1]
+  08008ea0: pop.w    {r4,r5,r6,r7,r8,r9,r10,r11,r12,pc}
+  08008ea4: str      r4, [r7,#0x28]
+  08008ea6: b        0x08008ea0
+  08008eb4: bx       lr
+  08008eb6: lsls     r1, r1, #0x1c
+  08008eb8: lsrs     r1, r1, #0x18
+  08008eba: cmp      r0, #0x0
+  08008ebc: bge      0x08008ecc
+
+## 08008e78 -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008e66: ldr      r0, [r7,#0x28]
+  08008e68: adds     r0, r0, #0x1
+  08008e6a: str      r0, [r7,#0x28]
+  08008e6c: cmp      r0, #0xc8
+  08008e6e: bcs      0x08008e7c
+  08008e70: pop.w    {r4,r5,r6,r7,r8,r9,r10,r11,r12,lr}
+  08008e74: movs     r1, #0x0
+  08008e76: movs     r0, #0x1
+> 08008e78: b.w      0x0800b220
+  08008e7c: subs     r0, #0xc8
+  08008e7e: cmp.w    r0, #0x12c
+  08008e82: bcs      0x08008ea4
+  08008e84: ldr      r1, [r7,#0x18]
+  08008e86: ldr      r0, [r7,#0x20]
+  08008e88: bl       0x0800b004
+  08008e8c: strb     r0, [r7,#0x4]
+  08008e8e: ldrb     r1, [r7,#0x5]
+  08008e90: cmp      r1, #0x1
+
+## 080091aa -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008ffc @ 08008ffc
+  08009192: mov      r4, r8
+  08009194: strh.w   r6, [r7,#0x42]
+  08009198: strh.w   r6, [r7,#0x40]
+  0800919c: ldrd     r1, r0, [r4,#0x18]
+  080091a0: bl       0x0800b004
+  080091a4: strb     r0, [r4,#0x3]
+  080091a6: sxtb     r1, r0
+  080091a8: movs     r0, #0x1
+> 080091aa: bl       0x0800b220
+  080091ae: bl       0x0800b2a8
+  080091b2: str      r0, [r4,#0x24]
+  080091b4: b        0x0800923c
+  080091b6: cmp      r2, #0x0
+  080091b8: bne      0x08009240
+  080091ba: uxth     r1, r0
+  080091bc: ldr      r0, [0x0800935c]
+  080091be: bl       0x08008b34
+  080091c2: ldrb     r1, [r5,#0x0]
+
+## 080092f4 -> 0800b220 (UNCONDITIONAL_CALL)
+function: FUN_08008ffc @ 08008ffc
+  080092dc: strh.w   r6, [r7,#0x42]
+  080092e0: strh.w   r6, [r7,#0x40]
+  080092e4: ldrd     r1, r0, [r4,#0x18]
+  080092e8: bl       0x0800b004
+  080092ec: strb     r0, [r4,#0x3]
+  080092ee: rsbs     r0, r0
+  080092f0: sxtb     r1, r0
+  080092f2: movs     r0, #0x1
+> 080092f4: bl       0x0800b220
+  080092f8: bl       0x0800b2a8
+  080092fc: str      r0, [r4,#0x24]
+  080092fe: bl       0x080093d0
+  08009302: b        0x08009342
+  08009304: adr      r0, [0x8009384]
+  08009306: b        0x080090f4
+  08009308: cmp      r1, #0x6
+  0800930a: bne      0x08009342
+  0800930c: ldrb     r1, [r7,#0x7]

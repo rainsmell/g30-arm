@@ -1,0 +1,1156 @@
+# Xrefs to 40021000
+
+## 08001b1c -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  08001af6: mov      r0, r5
+  08001af8: bl       0x08001ef8
+  08001afc: mov      r1, r4
+  08001afe: mov      r0, r8
+  08001b00: pop.w    {r4,r5,r6,r7,r8,lr}
+  08001b04: b.w      0x08001098
+  08001b18: ldr      r0, [0x08001bc4]
+  08001b1a: movs     r1, #0x0
+> 08001b1c: ldr      r2, [r0,#0x0]
+  08001b1e: orr      r2, r2, #0x10000
+  08001b22: str      r2, [r0,#0x0]
+  08001b24: movw     r3, #0xffff
+  08001b28: ldr      r2, [r0,#0x0]
+  08001b2a: adds     r1, r1, #0x1
+  08001b2c: tst      r2, #0x20000
+  08001b30: bne      0x08001b36
+  08001b32: cmp      r1, r3
+  08001b34: bne      0x08001b28
+
+## 08001b22 -> 40021000 (WRITE)
+function: FUN_080006e0 @ 080006e0
+  08001afc: mov      r1, r4
+  08001afe: mov      r0, r8
+  08001b00: pop.w    {r4,r5,r6,r7,r8,lr}
+  08001b04: b.w      0x08001098
+  08001b18: ldr      r0, [0x08001bc4]
+  08001b1a: movs     r1, #0x0
+  08001b1c: ldr      r2, [r0,#0x0]
+  08001b1e: orr      r2, r2, #0x10000
+> 08001b22: str      r2, [r0,#0x0]
+  08001b24: movw     r3, #0xffff
+  08001b28: ldr      r2, [r0,#0x0]
+  08001b2a: adds     r1, r1, #0x1
+  08001b2c: tst      r2, #0x20000
+  08001b30: bne      0x08001b36
+  08001b32: cmp      r1, r3
+  08001b34: bne      0x08001b28
+  08001b36: ldr      r1, [r0,#0x0]
+  08001b38: lsls     r1, r1, #0xe
+
+## 08001b28 -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  08001b00: pop.w    {r4,r5,r6,r7,r8,lr}
+  08001b04: b.w      0x08001098
+  08001b18: ldr      r0, [0x08001bc4]
+  08001b1a: movs     r1, #0x0
+  08001b1c: ldr      r2, [r0,#0x0]
+  08001b1e: orr      r2, r2, #0x10000
+  08001b22: str      r2, [r0,#0x0]
+  08001b24: movw     r3, #0xffff
+> 08001b28: ldr      r2, [r0,#0x0]
+  08001b2a: adds     r1, r1, #0x1
+  08001b2c: tst      r2, #0x20000
+  08001b30: bne      0x08001b36
+  08001b32: cmp      r1, r3
+  08001b34: bne      0x08001b28
+  08001b36: ldr      r1, [r0,#0x0]
+  08001b38: lsls     r1, r1, #0xe
+  08001b3a: bmi      0x08001b3e
+  08001b3c: b        0x08001b3c
+
+## 08001b36 -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  08001b22: str      r2, [r0,#0x0]
+  08001b24: movw     r3, #0xffff
+  08001b28: ldr      r2, [r0,#0x0]
+  08001b2a: adds     r1, r1, #0x1
+  08001b2c: tst      r2, #0x20000
+  08001b30: bne      0x08001b36
+  08001b32: cmp      r1, r3
+  08001b34: bne      0x08001b28
+> 08001b36: ldr      r1, [r0,#0x0]
+  08001b38: lsls     r1, r1, #0xe
+  08001b3a: bmi      0x08001b3e
+  08001b3c: b        0x08001b3c
+  08001b3e: ldr      r1, [r0,#0x1c]
+  08001b40: orr      r1, r1, #0x10000000
+  08001b44: str      r1, [r0,#0x1c]
+  08001b46: ldr      r1, [0x08001bc8]
+  08001b48: ldr      r2, [r1,#0x0]
+  08001b4a: orr      r2, r2, #0xc000
+
+## 08001b80 -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  08001b70: ldr      r2, [r0,#0x4]
+  08001b72: ldr      r3, [0x08001bcc]
+  08001b74: ands     r2, r3
+  08001b76: str      r2, [r0,#0x4]
+  08001b78: ldr      r2, [r0,#0x4]
+  08001b7a: ldr      r3, [0x08001bd0]
+  08001b7c: orrs     r2, r3
+  08001b7e: str      r2, [r0,#0x4]
+> 08001b80: ldr      r2, [r0,#0x0]
+  08001b82: orr      r2, r2, #0x1000000
+  08001b86: str      r2, [r0,#0x0]
+  08001b88: ldr      r2, [r0,#0x0]
+  08001b8a: lsls     r2, r2, #0x6
+  08001b8c: bpl      0x08001b88
+  08001b8e: ldr      r2, [r1,#0x0]
+  08001b90: orr      r2, r2, #0x10000
+  08001b94: str      r2, [r1,#0x0]
+  08001b96: ldr      r2, [r1,#0x4]
+
+## 08001b86 -> 40021000 (WRITE)
+function: FUN_080006e0 @ 080006e0
+  08001b74: ands     r2, r3
+  08001b76: str      r2, [r0,#0x4]
+  08001b78: ldr      r2, [r0,#0x4]
+  08001b7a: ldr      r3, [0x08001bd0]
+  08001b7c: orrs     r2, r3
+  08001b7e: str      r2, [r0,#0x4]
+  08001b80: ldr      r2, [r0,#0x0]
+  08001b82: orr      r2, r2, #0x1000000
+> 08001b86: str      r2, [r0,#0x0]
+  08001b88: ldr      r2, [r0,#0x0]
+  08001b8a: lsls     r2, r2, #0x6
+  08001b8c: bpl      0x08001b88
+  08001b8e: ldr      r2, [r1,#0x0]
+  08001b90: orr      r2, r2, #0x10000
+  08001b94: str      r2, [r1,#0x0]
+  08001b96: ldr      r2, [r1,#0x4]
+  08001b98: lsls     r2, r2, #0xf
+  08001b9a: bpl      0x08001b96
+
+## 08001b88 -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  08001b76: str      r2, [r0,#0x4]
+  08001b78: ldr      r2, [r0,#0x4]
+  08001b7a: ldr      r3, [0x08001bd0]
+  08001b7c: orrs     r2, r3
+  08001b7e: str      r2, [r0,#0x4]
+  08001b80: ldr      r2, [r0,#0x0]
+  08001b82: orr      r2, r2, #0x1000000
+  08001b86: str      r2, [r0,#0x0]
+> 08001b88: ldr      r2, [r0,#0x0]
+  08001b8a: lsls     r2, r2, #0x6
+  08001b8c: bpl      0x08001b88
+  08001b8e: ldr      r2, [r1,#0x0]
+  08001b90: orr      r2, r2, #0x10000
+  08001b94: str      r2, [r1,#0x0]
+  08001b96: ldr      r2, [r1,#0x4]
+  08001b98: lsls     r2, r2, #0xf
+  08001b9a: bpl      0x08001b96
+  08001b9c: ldr      r2, [r1,#0x0]
+
+## 0800191a -> 40021000 (DATA)
+function: FUN_08001914 @ 08001914
+  08001900: and      r3, r0, #0x1f
+  08001904: movs     r0, #0x1
+  08001906: lsls     r0, r3
+  08001908: bics     r2, r0
+  0800190a: str      r2, [r1,#0x0]
+  0800190c: bx       lr
+  08001914: ldr      r1, [0x0800192c]
+  08001916: add.w    r1, r1, r0, lsr #0x6
+> 0800191a: ldr      r2, [r1,#0x0]
+  0800191c: and      r3, r0, #0x1f
+  08001920: movs     r0, #0x1
+  08001922: lsls     r0, r3
+  08001924: orrs     r2, r0
+  08001926: str      r2, [r1,#0x0]
+  08001928: bx       lr
+  08001930: push     {r3,r4,r5,lr}
+  08001932: movs     r5, #0x0
+  08001934: strb.w   r5, [sp,#0x0]
+
+## 08001926 -> 40021000 (DATA)
+function: FUN_08001914 @ 08001914
+  0800190c: bx       lr
+  08001914: ldr      r1, [0x0800192c]
+  08001916: add.w    r1, r1, r0, lsr #0x6
+  0800191a: ldr      r2, [r1,#0x0]
+  0800191c: and      r3, r0, #0x1f
+  08001920: movs     r0, #0x1
+  08001922: lsls     r0, r3
+  08001924: orrs     r2, r0
+> 08001926: str      r2, [r1,#0x0]
+  08001928: bx       lr
+  08001930: push     {r3,r4,r5,lr}
+  08001932: movs     r5, #0x0
+  08001934: strb.w   r5, [sp,#0x0]
+  08001938: mov.w    r1, #0x8000000
+  0800193c: add.w    r4, r1, r0, lsl #0xa
+  08001940: bl       0x08000fc4
+  08001944: mov      r0, r4
+  08001946: bl       0x08000f34
+
+## 08001b18 -> 40021000 (DATA)
+function: FUN_080006e0 @ 080006e0
+  08001aee: bl       0x08001ec4
+  08001af2: mov.w    r1, #0x304
+  08001af6: mov      r0, r5
+  08001af8: bl       0x08001ef8
+  08001afc: mov      r1, r4
+  08001afe: mov      r0, r8
+  08001b00: pop.w    {r4,r5,r6,r7,r8,lr}
+  08001b04: b.w      0x08001098
+> 08001b18: ldr      r0, [0x08001bc4]
+  08001b1a: movs     r1, #0x0
+  08001b1c: ldr      r2, [r0,#0x0]
+  08001b1e: orr      r2, r2, #0x10000
+  08001b22: str      r2, [r0,#0x0]
+  08001b24: movw     r3, #0xffff
+  08001b28: ldr      r2, [r0,#0x0]
+  08001b2a: adds     r1, r1, #0x1
+  08001b2c: tst      r2, #0x20000
+  08001b30: bne      0x08001b36
+
+## 080018e2 -> 40021000 (DATA)
+function: FUN_080018dc @ 080018dc
+  080018c6: bl       0x080018dc
+  080018ca: mov.w    r0, #0x500
+  080018ce: bl       0x080018dc
+  080018d2: pop.w    {r4,lr}
+  080018d6: movs     r0, #0x2
+  080018d8: b.w      0x08001760
+  080018dc: ldr      r1, [0x080018f4]
+  080018de: add.w    r1, r1, r0, lsr #0x6
+> 080018e2: ldr      r2, [r1,#0x0]
+  080018e4: and      r3, r0, #0x1f
+  080018e8: movs     r0, #0x1
+  080018ea: lsls     r0, r3
+  080018ec: orrs     r2, r0
+  080018ee: str      r2, [r1,#0x0]
+  080018f0: bx       lr
+  080018f8: ldr      r1, [0x08001910]
+  080018fa: add.w    r1, r1, r0, lsr #0x6
+  080018fe: ldr      r2, [r1,#0x0]
+
+## 080018ee -> 40021000 (DATA)
+function: FUN_080018dc @ 080018dc
+  080018d8: b.w      0x08001760
+  080018dc: ldr      r1, [0x080018f4]
+  080018de: add.w    r1, r1, r0, lsr #0x6
+  080018e2: ldr      r2, [r1,#0x0]
+  080018e4: and      r3, r0, #0x1f
+  080018e8: movs     r0, #0x1
+  080018ea: lsls     r0, r3
+  080018ec: orrs     r2, r0
+> 080018ee: str      r2, [r1,#0x0]
+  080018f0: bx       lr
+  080018f8: ldr      r1, [0x08001910]
+  080018fa: add.w    r1, r1, r0, lsr #0x6
+  080018fe: ldr      r2, [r1,#0x0]
+  08001900: and      r3, r0, #0x1f
+  08001904: movs     r0, #0x1
+  08001906: lsls     r0, r3
+  08001908: bics     r2, r0
+  0800190a: str      r2, [r1,#0x0]
+
+## 080006ee -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  080006dc: bx       lr
+  080006de: bx       lr
+  080006e0: ldr      r0, [0x08000750]
+  080006e2: sub      sp, #0x8
+  080006e4: ldr      r1, [r0,#0x0]
+  080006e6: orr      r1, r1, #0xf00000
+  080006ea: str      r1, [r0,#0x0]
+  080006ec: ldr      r0, [0x08000754]
+> 080006ee: ldr      r1, [r0,#0x0]
+  080006f0: orr      r1, r1, #0x1
+  080006f4: str      r1, [r0,#0x0]
+  080006f6: ldr      r1, [r0,#0x0]
+  080006f8: lsls     r1, r1, #0x1e
+  080006fa: bpl      0x080006f6
+  080006fc: ldr      r1, [r0,#0x4]
+  080006fe: orr      r1, r1, #0x80
+  08000702: str      r1, [r0,#0x4]
+  08000704: movs     r2, #0x0
+
+## 080006f4 -> 40021000 (WRITE)
+function: FUN_080006e0 @ 080006e0
+  080006e0: ldr      r0, [0x08000750]
+  080006e2: sub      sp, #0x8
+  080006e4: ldr      r1, [r0,#0x0]
+  080006e6: orr      r1, r1, #0xf00000
+  080006ea: str      r1, [r0,#0x0]
+  080006ec: ldr      r0, [0x08000754]
+  080006ee: ldr      r1, [r0,#0x0]
+  080006f0: orr      r1, r1, #0x1
+> 080006f4: str      r1, [r0,#0x0]
+  080006f6: ldr      r1, [r0,#0x0]
+  080006f8: lsls     r1, r1, #0x1e
+  080006fa: bpl      0x080006f6
+  080006fc: ldr      r1, [r0,#0x4]
+  080006fe: orr      r1, r1, #0x80
+  08000702: str      r1, [r0,#0x4]
+  08000704: movs     r2, #0x0
+  08000706: str      r2, [sp,#0x0]
+  08000708: ldr      r1, [sp,#0x0]
+
+## 080006f6 -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  080006e2: sub      sp, #0x8
+  080006e4: ldr      r1, [r0,#0x0]
+  080006e6: orr      r1, r1, #0xf00000
+  080006ea: str      r1, [r0,#0x0]
+  080006ec: ldr      r0, [0x08000754]
+  080006ee: ldr      r1, [r0,#0x0]
+  080006f0: orr      r1, r1, #0x1
+  080006f4: str      r1, [r0,#0x0]
+> 080006f6: ldr      r1, [r0,#0x0]
+  080006f8: lsls     r1, r1, #0x1e
+  080006fa: bpl      0x080006f6
+  080006fc: ldr      r1, [r0,#0x4]
+  080006fe: orr      r1, r1, #0x80
+  08000702: str      r1, [r0,#0x4]
+  08000704: movs     r2, #0x0
+  08000706: str      r2, [sp,#0x0]
+  08000708: ldr      r1, [sp,#0x0]
+  0800070a: adds     r1, r1, #0x1
+
+## 0800072e -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  0800071c: ldr      r1, [sp,#0x0]
+  0800071e: adds     r1, r1, #0x1
+  08000720: str      r1, [sp,#0x0]
+  08000722: cmp      r1, #0x50
+  08000724: bcc      0x0800071c
+  08000726: ldr      r1, [r0,#0x4]
+  08000728: bic      r1, r1, #0x3
+  0800072c: str      r1, [r0,#0x4]
+> 0800072e: ldr      r1, [r0,#0x0]
+  08000730: ldr      r3, [0x08000758]
+  08000732: ands     r1, r3
+  08000734: str      r1, [r0,#0x0]
+  08000736: mov.w    r1, #0x9f0000
+  0800073a: str      r1, [r0,#0x8]
+  0800073c: ldr      r1, [r0,#0x0]
+  0800073e: bic      r1, r1, #0x40000
+  08000742: str      r1, [r0,#0x0]
+  08000744: str      r2, [r0,#0x4]
+
+## 08000734 -> 40021000 (WRITE)
+function: FUN_080006e0 @ 080006e0
+  08000722: cmp      r1, #0x50
+  08000724: bcc      0x0800071c
+  08000726: ldr      r1, [r0,#0x4]
+  08000728: bic      r1, r1, #0x3
+  0800072c: str      r1, [r0,#0x4]
+  0800072e: ldr      r1, [r0,#0x0]
+  08000730: ldr      r3, [0x08000758]
+  08000732: ands     r1, r3
+> 08000734: str      r1, [r0,#0x0]
+  08000736: mov.w    r1, #0x9f0000
+  0800073a: str      r1, [r0,#0x8]
+  0800073c: ldr      r1, [r0,#0x0]
+  0800073e: bic      r1, r1, #0x40000
+  08000742: str      r1, [r0,#0x0]
+  08000744: str      r2, [r0,#0x4]
+  08000746: str      r2, [r0,#0x2c]
+  08000748: add      sp, #0x8
+  0800074a: b.w      0x08001b18
+
+## 0800073c -> 40021000 (READ)
+function: FUN_080006e0 @ 080006e0
+  08000728: bic      r1, r1, #0x3
+  0800072c: str      r1, [r0,#0x4]
+  0800072e: ldr      r1, [r0,#0x0]
+  08000730: ldr      r3, [0x08000758]
+  08000732: ands     r1, r3
+  08000734: str      r1, [r0,#0x0]
+  08000736: mov.w    r1, #0x9f0000
+  0800073a: str      r1, [r0,#0x8]
+> 0800073c: ldr      r1, [r0,#0x0]
+  0800073e: bic      r1, r1, #0x40000
+  08000742: str      r1, [r0,#0x0]
+  08000744: str      r2, [r0,#0x4]
+  08000746: str      r2, [r0,#0x2c]
+  08000748: add      sp, #0x8
+  0800074a: b.w      0x08001b18
+  0800075c: push     {r4,lr}
+  0800075e: ldr      r4, [0x08000780]
+  08000760: movs     r1, #0x1
+
+## 08000742 -> 40021000 (WRITE)
+function: FUN_080006e0 @ 080006e0
+  0800072e: ldr      r1, [r0,#0x0]
+  08000730: ldr      r3, [0x08000758]
+  08000732: ands     r1, r3
+  08000734: str      r1, [r0,#0x0]
+  08000736: mov.w    r1, #0x9f0000
+  0800073a: str      r1, [r0,#0x8]
+  0800073c: ldr      r1, [r0,#0x0]
+  0800073e: bic      r1, r1, #0x40000
+> 08000742: str      r1, [r0,#0x0]
+  08000744: str      r2, [r0,#0x4]
+  08000746: str      r2, [r0,#0x2c]
+  08000748: add      sp, #0x8
+  0800074a: b.w      0x08001b18
+  0800075c: push     {r4,lr}
+  0800075e: ldr      r4, [0x08000780]
+  08000760: movs     r1, #0x1
+  08000762: mov      r0, r4
+  08000764: bl       0x08001d6a
+
+## 0800b38c -> 40021000 (DATA)
+function: FUN_0800b38c @ 0800b38c
+  0800b36c: str      r1, [r3,#0x4]
+  0800b36e: str      r2, [r3,#0x2c]
+  0800b370: pop      {r4,pc}
+  0800b37c: ldr      r0, [0x0800b388]
+  0800b37e: ldr      r1, [r0,#0x20]
+  0800b380: bic      r1, r1, #0x10000
+  0800b384: str      r1, [r0,#0x20]
+  0800b386: bx       lr
+> 0800b38c: ldr      r0, [0x0800b398]
+  0800b38e: ldr      r1, [r0,#0x20]
+  0800b390: orr      r1, r1, #0x10000
+  0800b394: str      r1, [r0,#0x20]
+  0800b396: bx       lr
+  0800b39c: push     {r4,r5,r6,lr}
+  0800b39e: adr      r1, [0x800b47c]
+  0800b3a0: sub      sp, #0x20
+  0800b3a2: ldmia    r1, {r1,r2,r4,r5}
+  0800b3a4: stm      sp, {r1,r2,r4,r5}
+
+## 0800b50e -> 40021000 (DATA)
+function: FUN_0800b508 @ 0800b508
+  0800b4f4: and      r3, r0, #0x1f
+  0800b4f8: movs     r0, #0x1
+  0800b4fa: lsls     r0, r3
+  0800b4fc: bics     r2, r0
+  0800b4fe: str      r2, [r1,#0x0]
+  0800b500: bx       lr
+  0800b508: ldr      r1, [0x0800b520]
+  0800b50a: add.w    r1, r1, r0, lsr #0x6
+> 0800b50e: ldr      r2, [r1,#0x0]
+  0800b510: and      r3, r0, #0x1f
+  0800b514: movs     r0, #0x1
+  0800b516: lsls     r0, r3
+  0800b518: orrs     r2, r0
+  0800b51a: str      r2, [r1,#0x0]
+  0800b51c: bx       lr
+  0800b524: ldr      r1, [0x0800b53c]
+  0800b526: add.w    r1, r1, r0, lsr #0x6
+  0800b52a: ldr      r2, [r1,#0x0]
+
+## 0800b51a -> 40021000 (DATA)
+function: FUN_0800b508 @ 0800b508
+  0800b500: bx       lr
+  0800b508: ldr      r1, [0x0800b520]
+  0800b50a: add.w    r1, r1, r0, lsr #0x6
+  0800b50e: ldr      r2, [r1,#0x0]
+  0800b510: and      r3, r0, #0x1f
+  0800b514: movs     r0, #0x1
+  0800b516: lsls     r0, r3
+  0800b518: orrs     r2, r0
+> 0800b51a: str      r2, [r1,#0x0]
+  0800b51c: bx       lr
+  0800b524: ldr      r1, [0x0800b53c]
+  0800b526: add.w    r1, r1, r0, lsr #0x6
+  0800b52a: ldr      r2, [r1,#0x0]
+  0800b52c: and      r3, r0, #0x1f
+  0800b530: movs     r0, #0x1
+  0800b532: lsls     r0, r3
+  0800b534: orrs     r2, r0
+  0800b536: str      r2, [r1,#0x0]
+
+## 0800b4c2 -> 40021000 (DATA)
+function: FUN_0800b4bc @ 0800b4bc
+  0800b4a6: bl       0x0800b524
+  0800b4aa: mov.w    r0, #0x500
+  0800b4ae: bl       0x0800b524
+  0800b4b2: pop.w    {r4,lr}
+  0800b4b6: movs     r0, #0x2
+  0800b4b8: b.w      0x0800b328
+  0800b4bc: ldr      r2, [0x0800b4d8]
+  0800b4be: add.w    r1, r2, r0, lsr #0x6
+> 0800b4c2: ldr      r1, [r1,#0x0]
+  0800b4c4: and      r2, r0, #0x1f
+  0800b4c8: movs     r0, #0x1
+  0800b4ca: lsls     r0, r2
+  0800b4cc: tst      r1, r0
+  0800b4ce: beq      0x0800b4d4
+  0800b4d0: movs     r0, #0x1
+  0800b4d2: bx       lr
+  0800b4d4: movs     r0, #0x0
+  0800b4d6: bx       lr
+
+## 0800b52a -> 40021000 (DATA)
+function: FUN_0800b524 @ 0800b524
+  0800b510: and      r3, r0, #0x1f
+  0800b514: movs     r0, #0x1
+  0800b516: lsls     r0, r3
+  0800b518: orrs     r2, r0
+  0800b51a: str      r2, [r1,#0x0]
+  0800b51c: bx       lr
+  0800b524: ldr      r1, [0x0800b53c]
+  0800b526: add.w    r1, r1, r0, lsr #0x6
+> 0800b52a: ldr      r2, [r1,#0x0]
+  0800b52c: and      r3, r0, #0x1f
+  0800b530: movs     r0, #0x1
+  0800b532: lsls     r0, r3
+  0800b534: orrs     r2, r0
+  0800b536: str      r2, [r1,#0x0]
+  0800b538: bx       lr
+  0800b540: ldr      r1, [0x0800b558]
+  0800b542: add.w    r1, r1, r0, lsr #0x6
+  0800b546: ldr      r2, [r1,#0x0]
+
+## 0800b536 -> 40021000 (DATA)
+function: FUN_0800b524 @ 0800b524
+  0800b51c: bx       lr
+  0800b524: ldr      r1, [0x0800b53c]
+  0800b526: add.w    r1, r1, r0, lsr #0x6
+  0800b52a: ldr      r2, [r1,#0x0]
+  0800b52c: and      r3, r0, #0x1f
+  0800b530: movs     r0, #0x1
+  0800b532: lsls     r0, r3
+  0800b534: orrs     r2, r0
+> 0800b536: str      r2, [r1,#0x0]
+  0800b538: bx       lr
+  0800b540: ldr      r1, [0x0800b558]
+  0800b542: add.w    r1, r1, r0, lsr #0x6
+  0800b546: ldr      r2, [r1,#0x0]
+  0800b548: and      r3, r0, #0x1f
+  0800b54c: movs     r0, #0x1
+  0800b54e: lsls     r0, r3
+  0800b550: bics     r2, r0
+  0800b552: str      r2, [r1,#0x0]
+
+## 0800b4de -> 40021000 (READ)
+function: FUN_0800b4dc @ 0800b4dc
+  0800b4ca: lsls     r0, r2
+  0800b4cc: tst      r1, r0
+  0800b4ce: beq      0x0800b4d4
+  0800b4d0: movs     r0, #0x1
+  0800b4d2: bx       lr
+  0800b4d4: movs     r0, #0x0
+  0800b4d6: bx       lr
+  0800b4dc: ldr      r0, [0x0800b4e8]
+> 0800b4de: ldr      r1, [r0,#0x0]
+  0800b4e0: orr      r1, r1, #0x80000
+  0800b4e4: str      r1, [r0,#0x0]
+  0800b4e6: bx       lr
+  0800b4ec: ldr      r1, [0x0800b504]
+  0800b4ee: add.w    r1, r1, r0, lsr #0x6
+  0800b4f2: ldr      r2, [r1,#0x0]
+  0800b4f4: and      r3, r0, #0x1f
+  0800b4f8: movs     r0, #0x1
+  0800b4fa: lsls     r0, r3
+
+## 0800b4e4 -> 40021000 (WRITE)
+function: FUN_0800b4dc @ 0800b4dc
+  0800b4ce: beq      0x0800b4d4
+  0800b4d0: movs     r0, #0x1
+  0800b4d2: bx       lr
+  0800b4d4: movs     r0, #0x0
+  0800b4d6: bx       lr
+  0800b4dc: ldr      r0, [0x0800b4e8]
+  0800b4de: ldr      r1, [r0,#0x0]
+  0800b4e0: orr      r1, r1, #0x80000
+> 0800b4e4: str      r1, [r0,#0x0]
+  0800b4e6: bx       lr
+  0800b4ec: ldr      r1, [0x0800b504]
+  0800b4ee: add.w    r1, r1, r0, lsr #0x6
+  0800b4f2: ldr      r2, [r1,#0x0]
+  0800b4f4: and      r3, r0, #0x1f
+  0800b4f8: movs     r0, #0x1
+  0800b4fa: lsls     r0, r3
+  0800b4fc: bics     r2, r0
+  0800b4fe: str      r2, [r1,#0x0]
+
+## 0800b4dc -> 40021000 (DATA)
+function: FUN_0800b4dc @ 0800b4dc
+  0800b4c8: movs     r0, #0x1
+  0800b4ca: lsls     r0, r2
+  0800b4cc: tst      r1, r0
+  0800b4ce: beq      0x0800b4d4
+  0800b4d0: movs     r0, #0x1
+  0800b4d2: bx       lr
+  0800b4d4: movs     r0, #0x0
+  0800b4d6: bx       lr
+> 0800b4dc: ldr      r0, [0x0800b4e8]
+  0800b4de: ldr      r1, [r0,#0x0]
+  0800b4e0: orr      r1, r1, #0x80000
+  0800b4e4: str      r1, [r0,#0x0]
+  0800b4e6: bx       lr
+  0800b4ec: ldr      r1, [0x0800b504]
+  0800b4ee: add.w    r1, r1, r0, lsr #0x6
+  0800b4f2: ldr      r2, [r1,#0x0]
+  0800b4f4: and      r3, r0, #0x1f
+  0800b4f8: movs     r0, #0x1
+
+## 0800b562 -> 40021000 (DATA)
+function: FUN_0800b55c @ 0800b55c
+  0800b548: and      r3, r0, #0x1f
+  0800b54c: movs     r0, #0x1
+  0800b54e: lsls     r0, r3
+  0800b550: bics     r2, r0
+  0800b552: str      r2, [r1,#0x0]
+  0800b554: bx       lr
+  0800b55c: ldr      r1, [0x0800b574]
+  0800b55e: add.w    r1, r1, r0, lsr #0x6
+> 0800b562: ldr      r2, [r1,#0x0]
+  0800b564: and      r3, r0, #0x1f
+  0800b568: movs     r0, #0x1
+  0800b56a: lsls     r0, r3
+  0800b56c: orrs     r2, r0
+  0800b56e: str      r2, [r1,#0x0]
+  0800b570: bx       lr
+  0800b578: ldr      r2, [0x0800b588]
+  0800b57a: ldr      r1, [r2,#0x20]
+  0800b57c: bic      r1, r1, #0x300
+
+## 0800b56e -> 40021000 (DATA)
+function: FUN_0800b55c @ 0800b55c
+  0800b554: bx       lr
+  0800b55c: ldr      r1, [0x0800b574]
+  0800b55e: add.w    r1, r1, r0, lsr #0x6
+  0800b562: ldr      r2, [r1,#0x0]
+  0800b564: and      r3, r0, #0x1f
+  0800b568: movs     r0, #0x1
+  0800b56a: lsls     r0, r3
+  0800b56c: orrs     r2, r0
+> 0800b56e: str      r2, [r1,#0x0]
+  0800b570: bx       lr
+  0800b578: ldr      r2, [0x0800b588]
+  0800b57a: ldr      r1, [r2,#0x20]
+  0800b57c: bic      r1, r1, #0x300
+  0800b580: orrs     r1, r0
+  0800b582: str      r1, [r2,#0x20]
+  0800b584: bx       lr
+  0800b58c: ldr      r2, [0x0800b59c]
+  0800b58e: ldr      r1, [r2,#0x4]
+
+## 08008f06 -> 40021000 (READ)
+function: FUN_08008efc @ 08008efc
+  08008eea: dsb      0xf
+  08008eee: b        0x08008eee
+  08008ef8: bx       lr
+  08008efc: push     {r2,r3,lr}
+  08008efe: movs     r0, #0x0
+  08008f00: str      r0, [sp,#0x0]
+  08008f02: str      r0, [sp,#0x4]
+  08008f04: ldr      r0, [0x08008fb8]
+> 08008f06: ldr      r1, [r0,#0x0]
+  08008f08: orr      r1, r1, #0x1
+  08008f0c: str      r1, [r0,#0x0]
+  08008f0e: mov.w    r2, #0x500
+  08008f12: ldr      r1, [sp,#0x0]
+  08008f14: adds     r1, r1, #0x1
+  08008f16: str      r1, [sp,#0x0]
+  08008f18: ldr      r1, [r0,#0x0]
+  08008f1a: ands     r1, r1, #0x2
+  08008f1e: str      r1, [sp,#0x4]
+
+## 08008f0c -> 40021000 (WRITE)
+function: FUN_08008efc @ 08008efc
+  08008ef8: bx       lr
+  08008efc: push     {r2,r3,lr}
+  08008efe: movs     r0, #0x0
+  08008f00: str      r0, [sp,#0x0]
+  08008f02: str      r0, [sp,#0x4]
+  08008f04: ldr      r0, [0x08008fb8]
+  08008f06: ldr      r1, [r0,#0x0]
+  08008f08: orr      r1, r1, #0x1
+> 08008f0c: str      r1, [r0,#0x0]
+  08008f0e: mov.w    r2, #0x500
+  08008f12: ldr      r1, [sp,#0x0]
+  08008f14: adds     r1, r1, #0x1
+  08008f16: str      r1, [sp,#0x0]
+  08008f18: ldr      r1, [r0,#0x0]
+  08008f1a: ands     r1, r1, #0x2
+  08008f1e: str      r1, [sp,#0x4]
+  08008f20: bne      0x08008f28
+  08008f22: ldr      r1, [sp,#0x0]
+
+## 08008f18 -> 40021000 (READ)
+function: FUN_08008efc @ 08008efc
+  08008f04: ldr      r0, [0x08008fb8]
+  08008f06: ldr      r1, [r0,#0x0]
+  08008f08: orr      r1, r1, #0x1
+  08008f0c: str      r1, [r0,#0x0]
+  08008f0e: mov.w    r2, #0x500
+  08008f12: ldr      r1, [sp,#0x0]
+  08008f14: adds     r1, r1, #0x1
+  08008f16: str      r1, [sp,#0x0]
+> 08008f18: ldr      r1, [r0,#0x0]
+  08008f1a: ands     r1, r1, #0x2
+  08008f1e: str      r1, [sp,#0x4]
+  08008f20: bne      0x08008f28
+  08008f22: ldr      r1, [sp,#0x0]
+  08008f24: cmp      r1, r2
+  08008f26: bne      0x08008f12
+  08008f28: ldr      r1, [r0,#0x0]
+  08008f2a: lsls     r1, r1, #0x1e
+  08008f2c: bmi      0x08008f30
+
+## 08008f28 -> 40021000 (READ)
+function: FUN_08008efc @ 08008efc
+  08008f16: str      r1, [sp,#0x0]
+  08008f18: ldr      r1, [r0,#0x0]
+  08008f1a: ands     r1, r1, #0x2
+  08008f1e: str      r1, [sp,#0x4]
+  08008f20: bne      0x08008f28
+  08008f22: ldr      r1, [sp,#0x0]
+  08008f24: cmp      r1, r2
+  08008f26: bne      0x08008f12
+> 08008f28: ldr      r1, [r0,#0x0]
+  08008f2a: lsls     r1, r1, #0x1e
+  08008f2c: bmi      0x08008f30
+  08008f2e: b        0x08008f2e
+  08008f30: ldr      r1, [r0,#0x1c]
+  08008f32: orr      r1, r1, #0x10000000
+  08008f36: str      r1, [r0,#0x1c]
+  08008f38: ldr      r1, [0x08008fbc]
+  08008f3a: ldr      r2, [r1,#0x0]
+  08008f3c: orr      r2, r2, #0xc000
+
+## 0800b37c -> 40021000 (DATA)
+function: FUN_0800b37c @ 0800b37c
+  0800b336: bic      r2, r2, #0x20000000
+  0800b33a: bcs      0x0800b36c
+  0800b33c: tbb      [pc,r0]
+  0800b34c: orr.w    r1, r1, r0, lsl #0xe
+  0800b350: b        0x0800b36c
+  0800b36c: str      r1, [r3,#0x4]
+  0800b36e: str      r2, [r3,#0x2c]
+  0800b370: pop      {r4,pc}
+> 0800b37c: ldr      r0, [0x0800b388]
+  0800b37e: ldr      r1, [r0,#0x20]
+  0800b380: bic      r1, r1, #0x10000
+  0800b384: str      r1, [r0,#0x20]
+  0800b386: bx       lr
+  0800b38c: ldr      r0, [0x0800b398]
+  0800b38e: ldr      r1, [r0,#0x20]
+  0800b390: orr      r1, r1, #0x10000
+  0800b394: str      r1, [r0,#0x20]
+  0800b396: bx       lr
+
+## 08008f62 -> 40021000 (READ)
+function: FUN_08008efc @ 08008efc
+  08008f52: ldr      r2, [r0,#0x4]
+  08008f54: ldr      r3, [0x08008fc0]
+  08008f56: ands     r2, r3
+  08008f58: str      r2, [r0,#0x4]
+  08008f5a: ldr      r2, [r0,#0x4]
+  08008f5c: ldr      r3, [0x08008fc4]
+  08008f5e: orrs     r2, r3
+  08008f60: str      r2, [r0,#0x4]
+> 08008f62: ldr      r2, [r0,#0x0]
+  08008f64: orr      r2, r2, #0x1000000
+  08008f68: str      r2, [r0,#0x0]
+  08008f6a: ldr      r2, [r0,#0x0]
+  08008f6c: lsls     r2, r2, #0x6
+  08008f6e: bpl      0x08008f6a
+  08008f70: ldr      r2, [r1,#0x0]
+  08008f72: orr      r2, r2, #0x10000
+  08008f76: str      r2, [r1,#0x0]
+  08008f78: ldr      r2, [r1,#0x4]
+
+## 08008f68 -> 40021000 (WRITE)
+function: FUN_08008efc @ 08008efc
+  08008f56: ands     r2, r3
+  08008f58: str      r2, [r0,#0x4]
+  08008f5a: ldr      r2, [r0,#0x4]
+  08008f5c: ldr      r3, [0x08008fc4]
+  08008f5e: orrs     r2, r3
+  08008f60: str      r2, [r0,#0x4]
+  08008f62: ldr      r2, [r0,#0x0]
+  08008f64: orr      r2, r2, #0x1000000
+> 08008f68: str      r2, [r0,#0x0]
+  08008f6a: ldr      r2, [r0,#0x0]
+  08008f6c: lsls     r2, r2, #0x6
+  08008f6e: bpl      0x08008f6a
+  08008f70: ldr      r2, [r1,#0x0]
+  08008f72: orr      r2, r2, #0x10000
+  08008f76: str      r2, [r1,#0x0]
+  08008f78: ldr      r2, [r1,#0x4]
+  08008f7a: lsls     r2, r2, #0xf
+  08008f7c: bpl      0x08008f78
+
+## 08008f6a -> 40021000 (READ)
+function: FUN_08008efc @ 08008efc
+  08008f58: str      r2, [r0,#0x4]
+  08008f5a: ldr      r2, [r0,#0x4]
+  08008f5c: ldr      r3, [0x08008fc4]
+  08008f5e: orrs     r2, r3
+  08008f60: str      r2, [r0,#0x4]
+  08008f62: ldr      r2, [r0,#0x0]
+  08008f64: orr      r2, r2, #0x1000000
+  08008f68: str      r2, [r0,#0x0]
+> 08008f6a: ldr      r2, [r0,#0x0]
+  08008f6c: lsls     r2, r2, #0x6
+  08008f6e: bpl      0x08008f6a
+  08008f70: ldr      r2, [r1,#0x0]
+  08008f72: orr      r2, r2, #0x10000
+  08008f76: str      r2, [r1,#0x0]
+  08008f78: ldr      r2, [r1,#0x4]
+  08008f7a: lsls     r2, r2, #0xf
+  08008f7c: bpl      0x08008f78
+  08008f7e: ldr      r2, [r1,#0x0]
+
+## 0800b4f2 -> 40021000 (DATA)
+function: FUN_0800b4ec @ 0800b4ec
+  0800b4d6: bx       lr
+  0800b4dc: ldr      r0, [0x0800b4e8]
+  0800b4de: ldr      r1, [r0,#0x0]
+  0800b4e0: orr      r1, r1, #0x80000
+  0800b4e4: str      r1, [r0,#0x0]
+  0800b4e6: bx       lr
+  0800b4ec: ldr      r1, [0x0800b504]
+  0800b4ee: add.w    r1, r1, r0, lsr #0x6
+> 0800b4f2: ldr      r2, [r1,#0x0]
+  0800b4f4: and      r3, r0, #0x1f
+  0800b4f8: movs     r0, #0x1
+  0800b4fa: lsls     r0, r3
+  0800b4fc: bics     r2, r0
+  0800b4fe: str      r2, [r1,#0x0]
+  0800b500: bx       lr
+  0800b508: ldr      r1, [0x0800b520]
+  0800b50a: add.w    r1, r1, r0, lsr #0x6
+  0800b50e: ldr      r2, [r1,#0x0]
+
+## 0800b4fe -> 40021000 (DATA)
+function: FUN_0800b4ec @ 0800b4ec
+  0800b4e6: bx       lr
+  0800b4ec: ldr      r1, [0x0800b504]
+  0800b4ee: add.w    r1, r1, r0, lsr #0x6
+  0800b4f2: ldr      r2, [r1,#0x0]
+  0800b4f4: and      r3, r0, #0x1f
+  0800b4f8: movs     r0, #0x1
+  0800b4fa: lsls     r0, r3
+  0800b4fc: bics     r2, r0
+> 0800b4fe: str      r2, [r1,#0x0]
+  0800b500: bx       lr
+  0800b508: ldr      r1, [0x0800b520]
+  0800b50a: add.w    r1, r1, r0, lsr #0x6
+  0800b50e: ldr      r2, [r1,#0x0]
+  0800b510: and      r3, r0, #0x1f
+  0800b514: movs     r0, #0x1
+  0800b516: lsls     r0, r3
+  0800b518: orrs     r2, r0
+  0800b51a: str      r2, [r1,#0x0]
+
+## 08009dfa -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  08009de8: str      r0, [r1,#0x10]
+  08009dea: bx       lr
+  08009dec: ldr      r0, [0x08009e5c]
+  08009dee: sub      sp, #0x8
+  08009df0: ldr      r1, [r0,#0x0]
+  08009df2: orr      r1, r1, #0xf00000
+  08009df6: str      r1, [r0,#0x0]
+  08009df8: ldr      r0, [0x08009e60]
+> 08009dfa: ldr      r1, [r0,#0x0]
+  08009dfc: orr      r1, r1, #0x1
+  08009e00: str      r1, [r0,#0x0]
+  08009e02: ldr      r1, [r0,#0x0]
+  08009e04: lsls     r1, r1, #0x1e
+  08009e06: bpl      0x08009e02
+  08009e08: ldr      r1, [r0,#0x4]
+  08009e0a: orr      r1, r1, #0x80
+  08009e0e: str      r1, [r0,#0x4]
+  08009e10: movs     r2, #0x0
+
+## 08009e00 -> 40021000 (WRITE)
+function: FUN_08009dec @ 08009dec
+  08009dec: ldr      r0, [0x08009e5c]
+  08009dee: sub      sp, #0x8
+  08009df0: ldr      r1, [r0,#0x0]
+  08009df2: orr      r1, r1, #0xf00000
+  08009df6: str      r1, [r0,#0x0]
+  08009df8: ldr      r0, [0x08009e60]
+  08009dfa: ldr      r1, [r0,#0x0]
+  08009dfc: orr      r1, r1, #0x1
+> 08009e00: str      r1, [r0,#0x0]
+  08009e02: ldr      r1, [r0,#0x0]
+  08009e04: lsls     r1, r1, #0x1e
+  08009e06: bpl      0x08009e02
+  08009e08: ldr      r1, [r0,#0x4]
+  08009e0a: orr      r1, r1, #0x80
+  08009e0e: str      r1, [r0,#0x4]
+  08009e10: movs     r2, #0x0
+  08009e12: str      r2, [sp,#0x0]
+  08009e14: ldr      r1, [sp,#0x0]
+
+## 08009e02 -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  08009dee: sub      sp, #0x8
+  08009df0: ldr      r1, [r0,#0x0]
+  08009df2: orr      r1, r1, #0xf00000
+  08009df6: str      r1, [r0,#0x0]
+  08009df8: ldr      r0, [0x08009e60]
+  08009dfa: ldr      r1, [r0,#0x0]
+  08009dfc: orr      r1, r1, #0x1
+  08009e00: str      r1, [r0,#0x0]
+> 08009e02: ldr      r1, [r0,#0x0]
+  08009e04: lsls     r1, r1, #0x1e
+  08009e06: bpl      0x08009e02
+  08009e08: ldr      r1, [r0,#0x4]
+  08009e0a: orr      r1, r1, #0x80
+  08009e0e: str      r1, [r0,#0x4]
+  08009e10: movs     r2, #0x0
+  08009e12: str      r2, [sp,#0x0]
+  08009e14: ldr      r1, [sp,#0x0]
+  08009e16: adds     r1, r1, #0x1
+
+## 08009e3a -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  08009e28: ldr      r1, [sp,#0x0]
+  08009e2a: adds     r1, r1, #0x1
+  08009e2c: str      r1, [sp,#0x0]
+  08009e2e: cmp      r1, #0x50
+  08009e30: bcc      0x08009e28
+  08009e32: ldr      r1, [r0,#0x4]
+  08009e34: bic      r1, r1, #0x3
+  08009e38: str      r1, [r0,#0x4]
+> 08009e3a: ldr      r1, [r0,#0x0]
+  08009e3c: ldr      r3, [0x08009e64]
+  08009e3e: ands     r1, r3
+  08009e40: str      r1, [r0,#0x0]
+  08009e42: mov.w    r1, #0x9f0000
+  08009e46: str      r1, [r0,#0x8]
+  08009e48: ldr      r1, [r0,#0x0]
+  08009e4a: bic      r1, r1, #0x40000
+  08009e4e: str      r1, [r0,#0x0]
+  08009e50: str      r2, [r0,#0x4]
+
+## 08009e40 -> 40021000 (WRITE)
+function: FUN_08009dec @ 08009dec
+  08009e2e: cmp      r1, #0x50
+  08009e30: bcc      0x08009e28
+  08009e32: ldr      r1, [r0,#0x4]
+  08009e34: bic      r1, r1, #0x3
+  08009e38: str      r1, [r0,#0x4]
+  08009e3a: ldr      r1, [r0,#0x0]
+  08009e3c: ldr      r3, [0x08009e64]
+  08009e3e: ands     r1, r3
+> 08009e40: str      r1, [r0,#0x0]
+  08009e42: mov.w    r1, #0x9f0000
+  08009e46: str      r1, [r0,#0x8]
+  08009e48: ldr      r1, [r0,#0x0]
+  08009e4a: bic      r1, r1, #0x40000
+  08009e4e: str      r1, [r0,#0x0]
+  08009e50: str      r2, [r0,#0x4]
+  08009e52: str      r2, [r0,#0x2c]
+  08009e54: add      sp, #0x8
+  08009e56: b.w      0x0800bcf0
+
+## 08009e48 -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  08009e34: bic      r1, r1, #0x3
+  08009e38: str      r1, [r0,#0x4]
+  08009e3a: ldr      r1, [r0,#0x0]
+  08009e3c: ldr      r3, [0x08009e64]
+  08009e3e: ands     r1, r3
+  08009e40: str      r1, [r0,#0x0]
+  08009e42: mov.w    r1, #0x9f0000
+  08009e46: str      r1, [r0,#0x8]
+> 08009e48: ldr      r1, [r0,#0x0]
+  08009e4a: bic      r1, r1, #0x40000
+  08009e4e: str      r1, [r0,#0x0]
+  08009e50: str      r2, [r0,#0x4]
+  08009e52: str      r2, [r0,#0x2c]
+  08009e54: add      sp, #0x8
+  08009e56: b.w      0x0800bcf0
+  08009e68: push     {r4,r5,r6,lr}
+  08009e6a: ldr      r4, [0x08009f1c]
+  08009e6c: movs     r1, #0x1
+
+## 08009e4e -> 40021000 (WRITE)
+function: FUN_08009dec @ 08009dec
+  08009e3a: ldr      r1, [r0,#0x0]
+  08009e3c: ldr      r3, [0x08009e64]
+  08009e3e: ands     r1, r3
+  08009e40: str      r1, [r0,#0x0]
+  08009e42: mov.w    r1, #0x9f0000
+  08009e46: str      r1, [r0,#0x8]
+  08009e48: ldr      r1, [r0,#0x0]
+  08009e4a: bic      r1, r1, #0x40000
+> 08009e4e: str      r1, [r0,#0x0]
+  08009e50: str      r2, [r0,#0x4]
+  08009e52: str      r2, [r0,#0x2c]
+  08009e54: add      sp, #0x8
+  08009e56: b.w      0x0800bcf0
+  08009e68: push     {r4,r5,r6,lr}
+  08009e6a: ldr      r4, [0x08009f1c]
+  08009e6c: movs     r1, #0x1
+  08009e6e: vpush    {d8}
+  08009e72: mov      r0, r4
+
+## 0800bcf4 -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  0800bcbe: adr      r0, [0x800bcd0]
+  0800bcc0: bl       0x0800a02c
+  0800bcc4: movs     r0, #0x2
+  0800bcc6: bl       0x0800a85c
+  0800bcca: bl       0x08008ed8
+  0800bcce: pop      {r4,pc}
+  0800bcf0: ldr      r0, [0x0800bd9c]
+  0800bcf2: movs     r1, #0x0
+> 0800bcf4: ldr      r2, [r0,#0x0]
+  0800bcf6: orr      r2, r2, #0x10000
+  0800bcfa: str      r2, [r0,#0x0]
+  0800bcfc: movw     r3, #0xffff
+  0800bd00: ldr      r2, [r0,#0x0]
+  0800bd02: adds     r1, r1, #0x1
+  0800bd04: tst      r2, #0x20000
+  0800bd08: bne      0x0800bd0e
+  0800bd0a: cmp      r1, r3
+  0800bd0c: bne      0x0800bd00
+
+## 0800bcfa -> 40021000 (WRITE)
+function: FUN_08009dec @ 08009dec
+  0800bcc4: movs     r0, #0x2
+  0800bcc6: bl       0x0800a85c
+  0800bcca: bl       0x08008ed8
+  0800bcce: pop      {r4,pc}
+  0800bcf0: ldr      r0, [0x0800bd9c]
+  0800bcf2: movs     r1, #0x0
+  0800bcf4: ldr      r2, [r0,#0x0]
+  0800bcf6: orr      r2, r2, #0x10000
+> 0800bcfa: str      r2, [r0,#0x0]
+  0800bcfc: movw     r3, #0xffff
+  0800bd00: ldr      r2, [r0,#0x0]
+  0800bd02: adds     r1, r1, #0x1
+  0800bd04: tst      r2, #0x20000
+  0800bd08: bne      0x0800bd0e
+  0800bd0a: cmp      r1, r3
+  0800bd0c: bne      0x0800bd00
+  0800bd0e: ldr      r1, [r0,#0x0]
+  0800bd10: lsls     r1, r1, #0xe
+
+## 0800bd00 -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  0800bcca: bl       0x08008ed8
+  0800bcce: pop      {r4,pc}
+  0800bcf0: ldr      r0, [0x0800bd9c]
+  0800bcf2: movs     r1, #0x0
+  0800bcf4: ldr      r2, [r0,#0x0]
+  0800bcf6: orr      r2, r2, #0x10000
+  0800bcfa: str      r2, [r0,#0x0]
+  0800bcfc: movw     r3, #0xffff
+> 0800bd00: ldr      r2, [r0,#0x0]
+  0800bd02: adds     r1, r1, #0x1
+  0800bd04: tst      r2, #0x20000
+  0800bd08: bne      0x0800bd0e
+  0800bd0a: cmp      r1, r3
+  0800bd0c: bne      0x0800bd00
+  0800bd0e: ldr      r1, [r0,#0x0]
+  0800bd10: lsls     r1, r1, #0xe
+  0800bd12: bmi      0x0800bd16
+  0800bd14: b        0x0800bd14
+
+## 0800bd0e -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  0800bcfa: str      r2, [r0,#0x0]
+  0800bcfc: movw     r3, #0xffff
+  0800bd00: ldr      r2, [r0,#0x0]
+  0800bd02: adds     r1, r1, #0x1
+  0800bd04: tst      r2, #0x20000
+  0800bd08: bne      0x0800bd0e
+  0800bd0a: cmp      r1, r3
+  0800bd0c: bne      0x0800bd00
+> 0800bd0e: ldr      r1, [r0,#0x0]
+  0800bd10: lsls     r1, r1, #0xe
+  0800bd12: bmi      0x0800bd16
+  0800bd14: b        0x0800bd14
+  0800bd16: ldr      r1, [r0,#0x1c]
+  0800bd18: orr      r1, r1, #0x10000000
+  0800bd1c: str      r1, [r0,#0x1c]
+  0800bd1e: ldr      r1, [0x0800bda0]
+  0800bd20: ldr      r2, [r1,#0x0]
+  0800bd22: orr      r2, r2, #0xc000
+
+## 0800bd58 -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  0800bd48: ldr      r2, [r0,#0x4]
+  0800bd4a: ldr      r3, [0x0800bda4]
+  0800bd4c: ands     r2, r3
+  0800bd4e: str      r2, [r0,#0x4]
+  0800bd50: ldr      r2, [r0,#0x4]
+  0800bd52: ldr      r3, [0x0800bda8]
+  0800bd54: orrs     r2, r3
+  0800bd56: str      r2, [r0,#0x4]
+> 0800bd58: ldr      r2, [r0,#0x0]
+  0800bd5a: orr      r2, r2, #0x1000000
+  0800bd5e: str      r2, [r0,#0x0]
+  0800bd60: ldr      r2, [r0,#0x0]
+  0800bd62: lsls     r2, r2, #0x6
+  0800bd64: bpl      0x0800bd60
+  0800bd66: ldr      r2, [r1,#0x0]
+  0800bd68: orr      r2, r2, #0x10000
+  0800bd6c: str      r2, [r1,#0x0]
+  0800bd6e: ldr      r2, [r1,#0x4]
+
+## 0800bd5e -> 40021000 (WRITE)
+function: FUN_08009dec @ 08009dec
+  0800bd4c: ands     r2, r3
+  0800bd4e: str      r2, [r0,#0x4]
+  0800bd50: ldr      r2, [r0,#0x4]
+  0800bd52: ldr      r3, [0x0800bda8]
+  0800bd54: orrs     r2, r3
+  0800bd56: str      r2, [r0,#0x4]
+  0800bd58: ldr      r2, [r0,#0x0]
+  0800bd5a: orr      r2, r2, #0x1000000
+> 0800bd5e: str      r2, [r0,#0x0]
+  0800bd60: ldr      r2, [r0,#0x0]
+  0800bd62: lsls     r2, r2, #0x6
+  0800bd64: bpl      0x0800bd60
+  0800bd66: ldr      r2, [r1,#0x0]
+  0800bd68: orr      r2, r2, #0x10000
+  0800bd6c: str      r2, [r1,#0x0]
+  0800bd6e: ldr      r2, [r1,#0x4]
+  0800bd70: lsls     r2, r2, #0xf
+  0800bd72: bpl      0x0800bd6e
+
+## 0800bd60 -> 40021000 (READ)
+function: FUN_08009dec @ 08009dec
+  0800bd4e: str      r2, [r0,#0x4]
+  0800bd50: ldr      r2, [r0,#0x4]
+  0800bd52: ldr      r3, [0x0800bda8]
+  0800bd54: orrs     r2, r3
+  0800bd56: str      r2, [r0,#0x4]
+  0800bd58: ldr      r2, [r0,#0x0]
+  0800bd5a: orr      r2, r2, #0x1000000
+  0800bd5e: str      r2, [r0,#0x0]
+> 0800bd60: ldr      r2, [r0,#0x0]
+  0800bd62: lsls     r2, r2, #0x6
+  0800bd64: bpl      0x0800bd60
+  0800bd66: ldr      r2, [r1,#0x0]
+  0800bd68: orr      r2, r2, #0x10000
+  0800bd6c: str      r2, [r1,#0x0]
+  0800bd6e: ldr      r2, [r1,#0x4]
+  0800bd70: lsls     r2, r2, #0xf
+  0800bd72: bpl      0x0800bd6e
+  0800bd74: ldr      r2, [r1,#0x0]
+
+## 0800bcf0 -> 40021000 (DATA)
+function: FUN_08009dec @ 08009dec
+  0800bcba: cmp      r0, #0x1
+  0800bcbc: beq      0x0800bcce
+  0800bcbe: adr      r0, [0x800bcd0]
+  0800bcc0: bl       0x0800a02c
+  0800bcc4: movs     r0, #0x2
+  0800bcc6: bl       0x0800a85c
+  0800bcca: bl       0x08008ed8
+  0800bcce: pop      {r4,pc}
+> 0800bcf0: ldr      r0, [0x0800bd9c]
+  0800bcf2: movs     r1, #0x0
+  0800bcf4: ldr      r2, [r0,#0x0]
+  0800bcf6: orr      r2, r2, #0x10000
+  0800bcfa: str      r2, [r0,#0x0]
+  0800bcfc: movw     r3, #0xffff
+  0800bd00: ldr      r2, [r0,#0x0]
+  0800bd02: adds     r1, r1, #0x1
+  0800bd04: tst      r2, #0x20000
+  0800bd08: bne      0x0800bd0e

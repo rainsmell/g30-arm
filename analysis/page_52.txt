@@ -1,0 +1,37 @@
+  GD32F103xx Datasheet 
+51 
+ 
+voltage should be connected to VREFP/VREFN pins. According to the different packages, 
+VREFP pin can be connected to VDDA pin, or external reference voltage, VREFN pin must be 
+connected to VSSA pin. The VREFP pin is only available on no less than 100-pin packages. 
+On less than 100-pin packages, the VREFP pin is not available and it is internally connected 
+to VDDA. The VREFN pin is internally connected to VSSA. 
+3.7. Digital to analog converter (DAC) 
+ One DAC with two channels can work independently or concurrently  
+ 8-bit or 12-bit mode in conjunction with the DMA controller 
+The two 12 -bit buffered DAC  channels are used to generate variable analog outputs . The 
+DAC channels can be triggered by the timer or EXTI with DMA support. In dual DAC channel 
+operation, conversions could be done independently or concurrently. The maximum output 
+value of the DAC is VREFP. 
+3.8. DMA 
+ 7 channel DMA0 controller and 5 channel DMA1 controller 
+ Peripherals supported: Timers, ADC, SPIs, I2Cs, USARTs, DAC, I2S and SDIO 
+The direct memory access (DMA) controllers provide a hardware method of transferring data 
+between peripherals and/or memory without intervention from the CPU, thereby freeing up 
+bandwidth for other system functions. Three types of access method are supported: 
+peripheral to memory, memory to peripheral, memory to memory. 
+Each channel is connected to fixed hardware DMA requests. The priorities of DMA channel 
+requests are determined by software configuration and hardware channel number. Transfer 
+size of source and destination are independent and configurable. 
+3.9. General-purpose inputs/outputs (GPIOs) 
+ Up to 112 fast GPIOs, all mappable on 16 external interrupt lines 
+ Analog input/output configurable 
+ Alternate function input/output configurable 
+There are up to 112 general purpose I/O pins (GPIO), named PA0 ~ PA15, PB0 ~ PB15, PC0 
+~ PC15, PD0 ~ PD15, PE0 ~ PE15, PF0 ~ PF15 and PG0 ~ PG15 for the device to implement 
+logic input/output functions. Each GPIO port has related control and configuration registers to 
+satisfy the requirements of specific applications. The external interrupt on the GPIO pins of 
+the device have related control and configuration registers in the Interrupt/event Controller 
+Unit (EXTI). The GPIO ports are pin -shared with other a lternative functions (AFs) to obtain 
+maximum flexibility on the package pins. The GPIO pins can be used as alternative functional 
+pins by configuring the corresponding registers regardless of the AF input or output pins. Each 

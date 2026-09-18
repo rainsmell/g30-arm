@@ -1,0 +1,389 @@
+# Xrefs to 0800a02c
+
+## 080098e6 -> 0800a02c (UNCONDITIONAL_CALL)
+  080098cc: str.w    r12, [r3,#0x0]
+  080098d0: movs     r0, #0x1
+  080098d2: str.w    r8, [r4,#0x0]
+  080098d6: b        0x080098aa
+  080098dc: push     {r4,r5,r6,lr}
+  080098de: cpsid    i
+  080098e0: bl       0x08009d64
+  080098e4: adr      r0, [0x8009a88]
+> 080098e6: bl       0x0800a02c
+  080098ea: movw     r0, #0x91d
+  080098ee: bl       0x0800b4bc
+  080098f2: mov      r2, r0
+  080098f4: ldr      r0, [0x08009ab8]
+  080098f6: ldr      r1, [r0,#0x24]
+  080098f8: adr      r0, [0x8009abc]
+  080098fa: bl       0x0800a02c
+  080098fe: ldr      r5, [0x08009ae0]
+  08009900: movs     r0, #0x2
+
+## 080098fa -> 0800a02c (UNCONDITIONAL_CALL)
+  080098e4: adr      r0, [0x8009a88]
+  080098e6: bl       0x0800a02c
+  080098ea: movw     r0, #0x91d
+  080098ee: bl       0x0800b4bc
+  080098f2: mov      r2, r0
+  080098f4: ldr      r0, [0x08009ab8]
+  080098f6: ldr      r1, [r0,#0x24]
+  080098f8: adr      r0, [0x8009abc]
+> 080098fa: bl       0x0800a02c
+  080098fe: ldr      r5, [0x08009ae0]
+  08009900: movs     r0, #0x2
+  08009902: ldr      r4, [0x08009ae4]
+  08009904: str      r0, [r5,#0x0]
+  08009906: subs     r0, r0, #0x3
+  08009908: str      r0, [r4,#0x0]
+  0800990a: bl       0x0800818c
+  0800990e: cmp      r0, #0x1
+  08009910: beq      0x08009916
+
+## 0800991e -> 0800a02c (UNCONDITIONAL_CALL)
+  0800990e: cmp      r0, #0x1
+  08009910: beq      0x08009916
+  08009912: adr      r0, [0x8009ae8]
+  08009914: b        0x08009988
+  08009916: ldr      r0, [r4,#0x0]
+  08009918: subs     r0, r0, #0x2
+  0800991a: str      r0, [r4,#0x0]
+  0800991c: adr      r0, [0x8009b04]
+> 0800991e: bl       0x0800a02c
+  08009922: ldr      r0, [r5,#0x0]
+  08009924: adds     r0, r0, #0x5
+  08009926: str      r0, [r5,#0x0]
+  08009928: ldr      r0, [r4,#0x0]
+  0800992a: subs     r0, r0, #0x5
+  0800992c: str      r0, [r4,#0x0]
+  0800992e: bl       0x08008efc
+  08009932: cmp      r0, #0x1
+  08009934: beq      0x08009950
+
+## 08009938 -> 0800a02c (UNCONDITIONAL_CALL)
+  08009926: str      r0, [r5,#0x0]
+  08009928: ldr      r0, [r4,#0x0]
+  0800992a: subs     r0, r0, #0x5
+  0800992c: str      r0, [r4,#0x0]
+  0800992e: bl       0x08008efc
+  08009932: cmp      r0, #0x1
+  08009934: beq      0x08009950
+  08009936: adr      r0, [0x8009b1c]
+> 08009938: bl       0x0800a02c
+  0800993c: mov.w    r0, #0xe000e000
+  08009940: ldr      r1, [r0,#0x10]
+  08009942: bic      r1, r1, #0x2
+  08009946: str      r1, [r0,#0x10]
+  08009948: ldr      r0, [0x08009b34]
+  0800994a: ldr      r1, [0x08009b38]
+  0800994c: str      r0, [r1,#0x0]
+  0800994e: b        0x0800994c
+  08009950: bl       0x08009d64
+
+## 08009988 -> 0800a02c (UNCONDITIONAL_CALL)
+  08009976: adds     r0, #0x11
+  08009978: str      r0, [r5,#0x0]
+  0800997a: bl       0x0800a7f4
+  0800997e: ldr      r1, [0x08009b40]
+  08009980: ldr      r1, [r1,#0x0]
+  08009982: cmp      r0, r1
+  08009984: beq      0x0800998e
+  08009986: adr      r0, [0x8009b44]
+> 08009988: bl       0x0800a02c
+  0800998c: b        0x080099be
+  0800998e: bl       0x0800a7f4
+  08009992: mvns     r0, r0
+  08009994: uxtb     r0, r0
+  08009996: bl       0x0800a834
+  0800999a: ldr      r0, [r4,#0x0]
+  0800999c: subs     r0, #0x11
+  0800999e: str      r0, [r4,#0x0]
+  080099a0: adr      r0, [0x8009b6c]
+
+## 080099a2 -> 0800a02c (UNCONDITIONAL_CALL)
+  0800998e: bl       0x0800a7f4
+  08009992: mvns     r0, r0
+  08009994: uxtb     r0, r0
+  08009996: bl       0x0800a834
+  0800999a: ldr      r0, [r4,#0x0]
+  0800999c: subs     r0, #0x11
+  0800999e: str      r0, [r4,#0x0]
+  080099a0: adr      r0, [0x8009b6c]
+> 080099a2: bl       0x0800a02c
+  080099a6: ldr      r1, [r5,#0x0]
+  080099a8: ldr      r2, [r4,#0x0]
+  080099aa: eor.w    r0, r1, r2
+  080099ae: adds     r0, r0, #0x1
+  080099b0: bne      0x080099b6
+  080099b2: cmp      r1, #0x2d
+  080099b4: beq      0x080099c2
+  080099b6: movs     r3, #0x2d
+  080099b8: adr      r0, [0x8009b8c]
+
+## 080099ba -> 0800a02c (UNCONDITIONAL_CALL)
+  080099a8: ldr      r2, [r4,#0x0]
+  080099aa: eor.w    r0, r1, r2
+  080099ae: adds     r0, r0, #0x1
+  080099b0: bne      0x080099b6
+  080099b2: cmp      r1, #0x2d
+  080099b4: beq      0x080099c2
+  080099b6: movs     r3, #0x2d
+  080099b8: adr      r0, [0x8009b8c]
+> 080099ba: bl       0x0800a02c
+  080099be: bl       0x08008b78
+  080099c2: adr      r0, [0x8009bb8]
+  080099c4: bl       0x0800a02c
+  080099c8: bl       0x0800943c
+  080099cc: cmp      r0, #0x1
+  080099ce: beq      0x080099d4
+  080099d0: adr      r0, [0x8009bd8]
+  080099d2: b        0x08009988
+  080099d4: adr      r0, [0x8009bec]
+
+## 080099c4 -> 0800a02c (UNCONDITIONAL_CALL)
+  080099b0: bne      0x080099b6
+  080099b2: cmp      r1, #0x2d
+  080099b4: beq      0x080099c2
+  080099b6: movs     r3, #0x2d
+  080099b8: adr      r0, [0x8009b8c]
+  080099ba: bl       0x0800a02c
+  080099be: bl       0x08008b78
+  080099c2: adr      r0, [0x8009bb8]
+> 080099c4: bl       0x0800a02c
+  080099c8: bl       0x0800943c
+  080099cc: cmp      r0, #0x1
+  080099ce: beq      0x080099d4
+  080099d0: adr      r0, [0x8009bd8]
+  080099d2: b        0x08009988
+  080099d4: adr      r0, [0x8009bec]
+  080099d6: bl       0x0800a02c
+  080099da: bl       0x0800a828
+  080099de: mov      r6, r0
+
+## 080099d6 -> 0800a02c (UNCONDITIONAL_CALL)
+  080099c2: adr      r0, [0x8009bb8]
+  080099c4: bl       0x0800a02c
+  080099c8: bl       0x0800943c
+  080099cc: cmp      r0, #0x1
+  080099ce: beq      0x080099d4
+  080099d0: adr      r0, [0x8009bd8]
+  080099d2: b        0x08009988
+  080099d4: adr      r0, [0x8009bec]
+> 080099d6: bl       0x0800a02c
+  080099da: bl       0x0800a828
+  080099de: mov      r6, r0
+  080099e0: bl       0x0800a7f4
+  080099e4: uxtb     r0, r0
+  080099e6: eors     r6, r0
+  080099e8: cmp      r6, #0xff
+  080099ea: beq      0x080099f0
+  080099ec: adr      r0, [0x8009c00]
+  080099ee: b        0x08009988
+
+## 080099fc -> 0800a02c (UNCONDITIONAL_CALL)
+  080099ea: beq      0x080099f0
+  080099ec: adr      r0, [0x8009c00]
+  080099ee: b        0x08009988
+  080099f0: bl       0x0800a7f4
+  080099f4: str      r0, [r5,#0x4]
+  080099f6: mvns     r0, r0
+  080099f8: str      r0, [r4,#0x4]
+  080099fa: adr      r0, [0x8009c1c]
+> 080099fc: bl       0x0800a02c
+  08009a00: bl       0x08008fc8
+  08009a04: cmp      r0, #0x1
+  08009a06: beq      0x08009a0c
+  08009a08: adr      r0, [0x8009c30]
+  08009a0a: b        0x08009988
+  08009a0c: ldr      r0, [r5,#0x0]
+  08009a0e: adds     r0, #0x17
+  08009a10: str      r0, [r5,#0x0]
+  08009a12: bl       0x0800be04
+
+## 08008b80 -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_08008b78 @ 08008b78
+  08008b66: bl       0x0800b524
+  08008b6a: bl       0x0800a810
+  08008b6e: pop.w    {r4,lr}
+  08008b72: b.w      0x0800a800
+  08008b76: bx       lr
+  08008b78: movs     r0, #0x0
+  08008b7a: bl       0x08009dd4
+  08008b7e: adr      r0, [0x8008b88]
+> 08008b80: bl       0x0800a02c
+  08008b84: bl       0x0800bc58
+  08008b88: subs     r6, #0x20
+  08008b8a: subs     r6, #0x3e
+  08008b8c: subs     r6, #0x3e
+  08008b8e: subs     r6, #0x3e
+  08008b90: subs     r6, #0x3e
+  08008b92: movs     r0, #0x3e
+  08008b94: ldr      r7, [0x08008cd8]
+  08008b96: movs     r0, #0x52
+
+## 0800bc66 -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_0800bc58 @ 0800bc58
+  0800bc4c: lsls     r1, r1, #0x1c
+  0800bc4e: bpl      0x0800bc4a
+  0800bc50: bx       lr
+  0800bc58: mov.w    r0, #0xe000e000
+  0800bc5c: ldr      r1, [r0,#0x10]
+  0800bc5e: bic      r1, r1, #0x2
+  0800bc62: str      r1, [r0,#0x10]
+  0800bc64: adr      r0, [0x800bc74]
+> 0800bc66: bl       0x0800a02c
+  0800bc6a: ldr      r0, [0x0800bcac]
+  0800bc6c: ldr      r1, [0x0800bcb0]
+  0800bc6e: str      r0, [r1,#0x0]
+  0800bc70: b        0x0800bc6e
+  0800bcb4: push     {r4,lr}
+  0800bcb6: bl       0x08009410
+  0800bcba: cmp      r0, #0x1
+  0800bcbc: beq      0x0800bcce
+  0800bcbe: adr      r0, [0x800bcd0]
+
+## 0800bcc0 -> 0800a02c (UNCONDITIONAL_CALL)
+  0800bc6c: ldr      r1, [0x0800bcb0]
+  0800bc6e: str      r0, [r1,#0x0]
+  0800bc70: b        0x0800bc6e
+  0800bcb4: push     {r4,lr}
+  0800bcb6: bl       0x08009410
+  0800bcba: cmp      r0, #0x1
+  0800bcbc: beq      0x0800bcce
+  0800bcbe: adr      r0, [0x800bcd0]
+> 0800bcc0: bl       0x0800a02c
+  0800bcc4: movs     r0, #0x2
+  0800bcc6: bl       0x0800a85c
+  0800bcca: bl       0x08008ed8
+  0800bcce: pop      {r4,pc}
+  0800bcf0: ldr      r0, [0x0800bd9c]
+  0800bcf2: movs     r1, #0x0
+  0800bcf4: ldr      r2, [r0,#0x0]
+  0800bcf6: orr      r2, r2, #0x10000
+  0800bcfa: str      r2, [r0,#0x0]
+
+## 08009fd8 -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_08009fac @ 08009fac
+  08009fc8: bls      0x08009fce
+  08009fca: strb     r6, [r5,#0xc]
+  08009fcc: pop      {r4,r5,r6,pc}
+  08009fce: ldrb     r0, [r5,#0xc]
+  08009fd0: mov      r1, r4
+  08009fd2: adds     r0, r0, #0x1
+  08009fd4: strb     r0, [r5,#0xc]
+  08009fd6: adr      r0, [0x800a004]
+> 08009fd8: bl       0x0800a02c
+  08009fdc: ldrb     r0, [r5,#0xc]
+  08009fde: cmp      r0, #0x2
+  08009fe0: bls      0x08009fcc
+  08009fe2: mov      r1, r4
+  08009fe4: adr      r0, [0x800a018]
+  08009fe6: bl       0x0800a02c
+  08009fea: ldr      r0, [0x0800a028]
+  08009fec: bl       0x0800a618
+  08009ff0: bl       0x0800a560
+
+## 08009fe6 -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_08009fac @ 08009fac
+  08009fd4: strb     r0, [r5,#0xc]
+  08009fd6: adr      r0, [0x800a004]
+  08009fd8: bl       0x0800a02c
+  08009fdc: ldrb     r0, [r5,#0xc]
+  08009fde: cmp      r0, #0x2
+  08009fe0: bls      0x08009fcc
+  08009fe2: mov      r1, r4
+  08009fe4: adr      r0, [0x800a018]
+> 08009fe6: bl       0x0800a02c
+  08009fea: ldr      r0, [0x0800a028]
+  08009fec: bl       0x0800a618
+  08009ff0: bl       0x0800a560
+  08009ff4: b        0x08009fca
+  0800a02c: push     {r0,r1,r2,r3}
+  0800a02e: ldr      r3, [0x0800a044]
+  0800a030: push     {r4,lr}
+  0800a032: add      r1, sp,#0xc
+  0800a034: ldr      r2, [0x0800a048]
+
+## 0800b0a4 -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_0800b02c @ 0800b02c
+  0800b090: bl       0x0800ae44
+  0800b094: strb     r0, [r5,#0x0]
+  0800b096: bl       0x0800adbc
+  0800b09a: ldr      r4, [0x0800b0e4]
+  0800b09c: adr      r0, [0x800b0e8]
+  0800b09e: ldrb     r3, [r4,#0xa]
+  0800b0a0: ldrb     r2, [r4,#0x9]
+  0800b0a2: ldrb     r1, [r4,#0x8]
+> 0800b0a4: bl       0x0800a02c
+  0800b0a8: movs     r2, #0x20
+  0800b0aa: mov      r1, sp
+  0800b0ac: ldr      r0, [r4,#0x4]
+  0800b0ae: bl       0x0800c4a8
+  0800b0b2: ldrb     r2, [r4,#0xb]
+  0800b0b4: mov      r1, sp
+  0800b0b6: adr      r0, [0x800b108]
+  0800b0b8: ldr      r3, [r5,#0x4]
+  0800b0ba: bl       0x0800a02c
+
+## 0800b0ba -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_0800b02c @ 0800b02c
+  0800b0a8: movs     r2, #0x20
+  0800b0aa: mov      r1, sp
+  0800b0ac: ldr      r0, [r4,#0x4]
+  0800b0ae: bl       0x0800c4a8
+  0800b0b2: ldrb     r2, [r4,#0xb]
+  0800b0b4: mov      r1, sp
+  0800b0b6: adr      r0, [0x800b108]
+  0800b0b8: ldr      r3, [r5,#0x4]
+> 0800b0ba: bl       0x0800a02c
+  0800b0be: movw     r0, #0x91d
+  0800b0c2: bl       0x0800b4bc
+  0800b0c6: mov      r1, r0
+  0800b0c8: adr      r0, [0x800b134]
+  0800b0ca: bl       0x0800a02c
+  0800b0ce: bl       0x08008ffc
+  0800b0d2: b        0x0800b0ce
+  0800b148: movs     r2, #0x0
+  0800b14a: mov      r1, r2
+
+## 0800b0ca -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_0800b02c @ 0800b02c
+  0800b0b4: mov      r1, sp
+  0800b0b6: adr      r0, [0x800b108]
+  0800b0b8: ldr      r3, [r5,#0x4]
+  0800b0ba: bl       0x0800a02c
+  0800b0be: movw     r0, #0x91d
+  0800b0c2: bl       0x0800b4bc
+  0800b0c6: mov      r1, r0
+  0800b0c8: adr      r0, [0x800b134]
+> 0800b0ca: bl       0x0800a02c
+  0800b0ce: bl       0x08008ffc
+  0800b0d2: b        0x0800b0ce
+  0800b148: movs     r2, #0x0
+  0800b14a: mov      r1, r2
+  0800b14c: movs     r0, #0x25
+  0800b14e: b.w      0x0800b168
+  0800b152: and      r2, r0, #0x1f
+  0800b156: movs     r1, #0x1
+  0800b158: lsls     r1, r2
+
+## 080090f4 -> 0800a02c (UNCONDITIONAL_CALL)
+function: FUN_08008ffc @ 08008ffc
+  080090e0: uxtb     r1, r0
+  080090e2: ldr      r0, [0x0800936c]
+  080090e4: bl       0x0800b2cc
+  080090e8: mov      r1, r11
+  080090ea: ldr      r0, [0x0800936c]
+  080090ec: bl       0x080088ce
+  080090f0: b        0x08009342
+  080090f2: b        0x08009350
+> 080090f4: bl       0x0800a02c
+  080090f8: b        0x08009342
+  080090fa: ldrb.w   r1, [r9,#0x3]
+  080090fe: mov      r4, r9
+  08009100: cmp      r1, #0x14
+  08009102: beq      0x08009116
+  08009104: bgt      0x0800911c
+  08009106: cmp      r1, #0x5
+  08009108: beq      0x080091b6
+  0800910a: cmp      r1, #0x9

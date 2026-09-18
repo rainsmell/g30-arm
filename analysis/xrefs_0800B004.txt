@@ -1,0 +1,148 @@
+# Xrefs to 0800b004
+
+## 08008cb4 -> 0800b004 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008ca0: cbz      r2, 0x08008cc4
+  08008ca2: cmp.w    r8, #0x32
+  08008ca6: bcs      0x08008d04
+  08008ca8: strb     r4, [r7,#0x2]
+  08008caa: strb     r4, [r7,#0x5]
+  08008cac: str      r4, [r7,#0x28]
+  08008cae: strb     r4, [r7,#0x8]
+  08008cb0: strh.w   r4, [r5,#0x40]
+> 08008cb4: bl       0x0800b004
+  08008cb8: strb     r0, [r7,#0x3]
+  08008cba: sxtb     r1, r0
+  08008cbc: movs     r0, #0x1
+  08008cbe: bl       0x0800b220
+  08008cc2: b        0x08008d30
+  08008cc4: strb     r4, [r7,#0x5]
+  08008cc6: strh.w   r9, [r5,#0x2]
+  08008cca: strb     r6, [r7,#0x9]
+  08008ccc: ldrh     r0, [r7,#0xe]
+
+## 08008d92 -> 0800b004 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008d7e: cbz      r2, 0x08008da4
+  08008d80: cmp.w    r8, #0x32
+  08008d84: bcs      0x08008de4
+  08008d86: strb     r4, [r7,#0x5]
+  08008d88: strb     r4, [r7,#0x8]
+  08008d8a: strb     r4, [r7,#0x2]
+  08008d8c: str      r4, [r7,#0x28]
+  08008d8e: strh.w   r4, [r5,#0x40]
+> 08008d92: bl       0x0800b004
+  08008d96: strb     r0, [r7,#0x3]
+  08008d98: rsbs     r0, r0
+  08008d9a: sxtb     r1, r0
+  08008d9c: movs     r0, #0x1
+  08008d9e: bl       0x0800b220
+  08008da2: b        0x08008e0e
+  08008da4: strb     r4, [r7,#0x5]
+  08008da6: strh.w   r9, [r5,#0x2]
+  08008daa: strb     r6, [r7,#0x9]
+
+## 08008e88 -> 0800b004 (UNCONDITIONAL_CALL)
+function: FUN_08008c30 @ 08008c30
+  08008e74: movs     r1, #0x0
+  08008e76: movs     r0, #0x1
+  08008e78: b.w      0x0800b220
+  08008e7c: subs     r0, #0xc8
+  08008e7e: cmp.w    r0, #0x12c
+  08008e82: bcs      0x08008ea4
+  08008e84: ldr      r1, [r7,#0x18]
+  08008e86: ldr      r0, [r7,#0x20]
+> 08008e88: bl       0x0800b004
+  08008e8c: strb     r0, [r7,#0x4]
+  08008e8e: ldrb     r1, [r7,#0x5]
+  08008e90: cmp      r1, #0x1
+  08008e92: beq      0x08008e96
+  08008e94: rsbs     r0, r0
+  08008e96: sxtb     r1, r0
+  08008e98: movs     r0, #0x1
+  08008e9a: bl       0x0800b220
+  08008e9e: strb     r4, [r7,#0x1]
+
+## 080091a0 -> 0800b004 (UNCONDITIONAL_CALL)
+function: FUN_08008ffc @ 08008ffc
+  08009184: strh.w   r0, [r7,r1,lsl #0x1]
+  08009188: cbz      r0, 0x080091ec
+  0800918a: strb.w   r6, [r8,#0x5]
+  0800918e: str.w    r6, [r8,#0x28]
+  08009192: mov      r4, r8
+  08009194: strh.w   r6, [r7,#0x42]
+  08009198: strh.w   r6, [r7,#0x40]
+  0800919c: ldrd     r1, r0, [r4,#0x18]
+> 080091a0: bl       0x0800b004
+  080091a4: strb     r0, [r4,#0x3]
+  080091a6: sxtb     r1, r0
+  080091a8: movs     r0, #0x1
+  080091aa: bl       0x0800b220
+  080091ae: bl       0x0800b2a8
+  080091b2: str      r0, [r4,#0x24]
+  080091b4: b        0x0800923c
+  080091b6: cmp      r2, #0x0
+  080091b8: bne      0x08009240
+
+## 08009204 -> 0800b004 (UNCONDITIONAL_CALL)
+function: FUN_08008ffc @ 08008ffc
+  080091ea: b        0x0800923c
+  080091ec: b        0x080091ee
+  080091ee: strb.w   r6, [r8,#0x5]
+  080091f2: str.w    r6, [r8,#0x28]
+  080091f6: mov      r4, r8
+  080091f8: strh.w   r6, [r7,#0x42]
+  080091fc: strh.w   r6, [r7,#0x40]
+  08009200: ldrd     r1, r0, [r4,#0x18]
+> 08009204: bl       0x0800b004
+  08009208: strb     r0, [r4,#0x3]
+  0800920a: rsbs     r0, r0
+  0800920c: b        0x080091a6
+  0800920e: b        0x08009242
+  08009210: cpsid    i
+  08009212: ldrh     r0, [r7,#0x3a]
+  08009214: movw     r4, #0xffff
+  08009218: cmp      r0, r4
+  0800921a: beq      0x08009228
+
+## 080092c6 -> 0800b004 (UNCONDITIONAL_CALL)
+function: FUN_08008ffc @ 08008ffc
+  080092ac: cmp      r0, #0x5a
+  080092ae: beq      0x080092fe
+  080092b0: strb.w   r6, [r8,#0x5]
+  080092b4: str.w    r6, [r8,#0x28]
+  080092b8: mov      r4, r8
+  080092ba: strh.w   r6, [r7,#0x42]
+  080092be: strh.w   r6, [r7,#0x40]
+  080092c2: ldrd     r1, r0, [r4,#0x18]
+> 080092c6: bl       0x0800b004
+  080092ca: strb     r0, [r4,#0x3]
+  080092cc: b        0x080092f0
+  080092ce: b        0x08009342
+  080092d0: cbz      r0, 0x080092fe
+  080092d2: strb.w   r6, [r8,#0x5]
+  080092d6: str.w    r6, [r8,#0x28]
+  080092da: mov      r4, r8
+  080092dc: strh.w   r6, [r7,#0x42]
+  080092e0: strh.w   r6, [r7,#0x40]
+
+## 080092e8 -> 0800b004 (UNCONDITIONAL_CALL)
+function: FUN_08008ffc @ 08008ffc
+  080092ce: b        0x08009342
+  080092d0: cbz      r0, 0x080092fe
+  080092d2: strb.w   r6, [r8,#0x5]
+  080092d6: str.w    r6, [r8,#0x28]
+  080092da: mov      r4, r8
+  080092dc: strh.w   r6, [r7,#0x42]
+  080092e0: strh.w   r6, [r7,#0x40]
+  080092e4: ldrd     r1, r0, [r4,#0x18]
+> 080092e8: bl       0x0800b004
+  080092ec: strb     r0, [r4,#0x3]
+  080092ee: rsbs     r0, r0
+  080092f0: sxtb     r1, r0
+  080092f2: movs     r0, #0x1
+  080092f4: bl       0x0800b220
+  080092f8: bl       0x0800b2a8
+  080092fc: str      r0, [r4,#0x24]
+  080092fe: bl       0x080093d0
+  08009302: b        0x08009342

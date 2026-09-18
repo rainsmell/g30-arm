@@ -1,0 +1,41 @@
+  GD32F103xx Datasheet 
+52 
+ 
+of the GPIO pins can be config ured by software as output (push -pull or open -drain), input, 
+peripheral alternate function or analog mode. Each GPIO pin can be configured as pull -up, 
+pull-down or no pull-up/pull-down. All GPIOs are high-current capable except for analog mode. 
+3.10. Timers and PWM generation 
+ Up to two 16-bit advanced timer (TIMER0 & TIMER7), ten 16-bit general timers, and two 
+16-bit basic timer (TIMER5 & TIMER6) 
+ Up to 4  independent channels of PWM, output compare or input capture for each and 
+external trigger input 
+ 16-bit, motor control PWM advanced timer with programmable dead-time generation for 
+output match 
+ Encoder interface controller with two inputs using quadrature decoder  
+ 24-bit SysTick timer down counter 
+ 2 watchdog timers (Free watchdog timer and window watchdog timer) 
+The advanced timer ( TIMER0 & TIMER7) can be seen as a three -phase PWM multiplexed 
+on 6 channels. It has complementary PWM outputs with programmable dead-time generation. 
+It can also be used  as a compl ete general timer. The 6 independent channels can be used 
+for 
+ Input capture 
+ Output compare 
+ PWM generation (edge-aligned or center-aligned counting modes) 
+ Single pulse mode output 
+If configured as a general 16 -bit timer, it can  be synchronized with external signals or to 
+interconnect with other general timer s together which have the same architecture and 
+features. 
+The general timer, known as TIMER1 ~ TIMER4, TIMER8 ~ TIMER10, TIMER11 ~ TIMER13 
+can be used for a variety of purposes including general time r, input signal pulse width 
+measurement or output waveform generation such as a single pulse generation or PW M 
+output, up to 4  independent channels for input capture/output compare. The general timer 
+also supports an encoder interface with two inputs using quadrature decoder. 
+The basic timer, known as TIMER5 and TIMER6 are mainly used for DAC trigger generation. 
+They can also be used as a simple 16-bit time base. 
+The GD32F103xx have two watchdog peripherals, free watchdog timer and window watchdog 
+timer. They offer a combination of high safety level, flexibility of use and timing accuracy. 
+The free watchdog timer consists of an 8 -stage prescaler and a 12 -bit down-counter, it is 
+clocked from an independent 40 KHz internal R C and as it operates independently of the 
+main clock, it can operate in deep-sleep and s tandby modes . It can be used either as a 
+watchdog to reset the device when a problem occurs, or as a free-running timer for application 
+timeout management. 

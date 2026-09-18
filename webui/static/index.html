@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>机械臂控制台</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo"></span>
+    <div>
+      <div class="brand-title">机械臂控制台</div>
+      <div class="brand-sub">6 轴 · Modbus RTU · 3D 数字孪生</div>
+    </div>
+  </div>
+
+  <div class="conn-group">
+    <select id="port-select" title="串口"></select>
+    <input id="baud-input" type="number" value="115200" step="1" title="波特率" class="baud">
+    <button id="btn-connect" class="btn">连接</button>
+    <button id="btn-disconnect" class="btn ghost" disabled>断开</button>
+    <label class="chk" title="dry-run：所有写命令只记录、不发送">
+      <input type="checkbox" id="chk-dryrun"> dry-run
+    </label>
+  </div>
+
+  <div class="conn-state">
+    <span id="conn-dot" class="dot off"></span>
+    <span id="conn-text">未连接</span>
+    <span id="dryrun-badge" class="badge hidden" title="dry-run：所有写命令只记录、不发送">DRY-RUN</span>
+  </div>
+
+  <div class="spacer"></div>
+
+  <button id="lock-toggle" class="btn lock locked" title="运动命令需要先解锁（第二道闸门）">
+    <span id="lock-icon">🔒</span><span id="lock-text">已锁定</span>
+  </button>
+
+  <button id="btn-estop" class="btn estop" title="关闭所有关节输出（伺服关节会失去保持力矩，先支撑好机械臂）">
+    ⛔ 急停
+  </button>
+</header>
+
+<div id="dryrun-banner" class="dryrun-banner hidden">
+  <b>DRY-RUN 模式</b>：写命令只记录、不会发给电机，所以机器<b>不会动</b>。
+  <button id="btn-leave-dryrun" class="btn tiny">解除 DRY-RUN 并重连</button>
+  <span class="muted">（或取消勾选顶部的 <code>dry-run</code> 后重新点「连接」）</span>
+</div>
+
+<main>
+
+  <!-- ============================ 左：关节控制 ============================ -->
+  <section class="panel col-left">
+    <div class="panel-head">
+      <h2>关节控制</h2>
+      <div class="panel-head-actions">
+        <button id="btn-verify" class="btn tiny" title="校验 6 个从站的固件身份">校验身份</button>
+        <button id="btn-refresh" class="btn tiny ghost">刷新</button>
+      </div>
+    </div>
+    <div id="joint-cards" class="panel-body"></div>
+  </section>
+
+  <!-- ============================ 中：3D 视图 ============================ -->
+  <section class="panel col-center">
+    <div class="viewport">
+      <canvas id="view-canvas"></canvas>
+
+      <div class="ov ov-tl">
+        <div class="ov-row" id="view-presets">
+          <button class="btn tiny" data-view="iso">等轴</button>
+          <button class="btn tiny" data-view="front">正视</button>
+          <button class="btn tiny" data-view="side">侧视</button>
+          <button class="btn tiny" data-view="top">俯视</button>
+          <button class="btn tiny" data-view="back">后视</button>
+        </div>
+        <div class="ov-row">
+          <label class="chk"><input type="checkbox" id="chk-grid" checked> 网格</label>
+          <label class="chk"><input type="checkbox" id="chk-axes" checked> 坐标轴</label>
+          <label class="chk"><input type="checkbox" id="chk-markers" checked> 关节</label>
+          <label class="chk"><input type="checkbox" id="chk-trail" checked> 轨迹</label>
+          <label class="chk" title="反向外壳描边，保证机械臂在深色背景上边界清晰">
+            <input type="checkbox" id="chk-outline" checked> 描边</label>
+          <label class="chk" title="L1/L2/L3 连杆标注，便于和实物对照">
+            <input type="checkbox" id="chk-links" checked> 连杆</label>
+          <label class="chk" title="远处的轻微景深提示">
+            <input type="checkbox" id="chk-fog" checked> 景深</label>
+          <label class="chk" title="半透明预览：跟随你输入的目标角度；点『移动到目标』后实物会与它重合">
+            <input type="checkbox" id="chk-ghost" checked> 预期</label>
+          <button class="btn tiny ghost" id="btn-clear-trail">清轨迹</button>
+        </div>
+      </div>
+
+      <div class="ov ov-tr">
+        <div class="readout">
+          <div class="ro-label">工具尖端 (mm)</div>
+          <div class="ro-value" id="tip-readout">—</div>
+        </div>
+        <div class="readout">
+          <div class="ro-label">选中关节</div>
+          <div class="ro-value" id="sel-readout">—</div>
+        </div>
+        <div class="readout">
+          <div class="ro-label">连杆夹角 (L1↔L2 / L2↔L3)</div>
+          <div class="ro-value" id="link-readout">—</div>
+        </div>
+        <div class="readout">
+          <div class="ro-label">预期姿态 · 目标尖端 (mm)</div>
+          <div class="ro-value" id="ghost-readout">—</div>
+          <div class="ro-warn hidden" id="ghost-warn"></div>
+        </div>
+      </div>
+
+      <div class="joint-labels" id="labels"></div>
+
+      <div class="ov ov-bl hint">
+        左键拖 = 旋转 · 右键/Shift 拖 = 平移 · 滚轮 = 缩放 · 点关节球 = 选中
+      </div>
+
+      <div id="gl-error" class="gl-error hidden"></div>
+    </div>
+  </section>
+
+  <!-- ============================ 右：状态/日志/Debug/模型 ============================ -->
+  <section class="panel col-right">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-tab="status">状态</button>
+      <button class="tab" data-tab="log">日志</button>
+      <button class="tab" data-tab="debug">Debug</button>
+      <button class="tab" data-tab="model">模型</button>
+    </div>
+
+    <!-- 状态 -->
+    <div class="tabpane active" id="tab-status">
+      <div class="pane-toolbar">
+        <label class="chk"><input type="checkbox" id="chk-auto-refresh" checked> 自动刷新 (5s)</label>
+        <span class="muted" id="status-updated">—</span>
+      </div>
+      <div class="scroll">
+        <table class="grid" id="status-table">
+          <thead>
+            <tr><th>关节</th><th>在线</th><th>位置</th><th>角度</th><th title="reg0x02：力矩/电流类反馈。运动刚结束时和保位对抗重力时都会偏高；是否真卡住要看【位置偏差】">负载</th><th>使能</th><th>故障</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="pane-note" id="help-notes"></div>
+    </div>
+
+    <!-- 日志 -->
+    <div class="tabpane" id="tab-log">
+      <div class="pane-toolbar">
+        <label class="chk"><input type="checkbox" class="log-filter" value="info" checked> info</label>
+        <label class="chk"><input type="checkbox" class="log-filter" value="warn" checked> warn</label>
+        <label class="chk"><input type="checkbox" class="log-filter" value="error" checked> error</label>
+        <label class="chk"><input type="checkbox" class="log-filter" value="sdk"> sdk</label>
+        <label class="chk"><input type="checkbox" class="log-filter" value="debug"> debug</label>
+        <div class="spacer"></div>
+        <button class="btn tiny ghost" id="btn-clear-log">清空</button>
+        <button class="btn tiny ghost" id="btn-export-log">导出</button>
+      </div>
+      <div class="log-list scroll" id="log-list"></div>
+    </div>
+
+    <!-- Debug -->
+    <div class="tabpane" id="tab-debug">
+      <div class="pane-toolbar">
+        <span class="muted">原始寄存器</span>
+      </div>
+      <div class="dbg-form">
+        <label>从站 <input type="number" id="dbg-slave" value="3" min="1" max="6"></label>
+        <label>起始 <input type="text" id="dbg-start" value="0x00"></label>
+        <label>数量 <input type="text" id="dbg-count" value="0x18"></label>
+        <button class="btn tiny" id="btn-dbg-read">读取</button>
+      </div>
+      <div class="scroll dbg-result" id="dbg-result"><span class="muted">—</span></div>
+
+      <div class="pane-toolbar">
+        <label class="chk"><input type="checkbox" id="chk-trace"> 记录协议帧 (TX/RX)</label>
+        <div class="spacer"></div>
+        <button class="btn tiny ghost" id="btn-clear-trace">清空</button>
+      </div>
+      <div class="scroll trace-list" id="trace-list"></div>
+    </div>
+
+    <!-- 模型 -->
+    <div class="tabpane" id="tab-model">
+      <div class="pane-toolbar">
+        <span class="muted">数字孪生标定</span>
+        <div class="spacer"></div>
+        <button class="btn tiny primary" id="btn-model-save" title="把当前模型参数写进覆盖文件，成为下次启动的默认值">保存为默认</button>
+        <button class="btn tiny" id="btn-model-import" title="从 JSON 文件导入模型参数">导入</button>
+        <button class="btn tiny ghost" id="btn-model-export" title="把当前模型参数下载成 JSON">导出</button>
+        <button class="btn tiny ghost" id="btn-model-reset" title="删除覆盖文件，回到 model_config.py 的出厂值">重置</button>
+      </div>
+      <div class="pane-note" id="model-path-note"></div>
+      <div class="scroll" id="model-editor"></div>
+      <input type="file" id="model-file" accept=".json,application/json" style="display:none">
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span id="sb-conn">未连接</span>
+  <span class="sep"></span>
+  <span id="sb-busy">空闲</span>
+  <span class="sep"></span>
+  <span id="sb-queue">队列 0</span>
+  <span class="sep"></span>
+  <span id="sb-clients">订阅 1</span>
+  <span class="sep"></span>
+  <span id="sb-error" class="err"></span>
+</footer>
+
+<div id="toasts" class="toasts"></div>
+
+<script src="/static/mat4.js"></script>
+<script src="/static/model.js"></script>
+<script src="/static/viewer.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

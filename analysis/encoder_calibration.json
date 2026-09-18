@@ -1,0 +1,125 @@
+{
+  "note": "J3/J4/J5 的 计数<->角度 标定点。rev = 上电批次：每次断电重上电要 +1，不同 rev 的零点不同，不能混算。",
+  "points": [
+    {
+      "joint": 3,
+      "slave": 3,
+      "deg": 0.0,
+      "pos_counts": 1,
+      "err": 14,
+      "reg0x18": 0,
+      "rev": 1,
+      "recorded_at": "2026-09-13 22:18:19"
+    },
+    {
+      "joint": 4,
+      "slave": 4,
+      "deg": 0.0,
+      "pos_counts": 8,
+      "err": -9,
+      "reg0x18": 1,
+      "rev": 1,
+      "recorded_at": "2026-09-13 22:18:21",
+      "note": "rev=1：当时 J4 停在上电时的随手位置，非精确 0 位（已被 rev=2 取代）"
+    },
+    {
+      "joint": 3,
+      "slave": 3,
+      "deg": 180.0,
+      "pos_counts": 1785,
+      "err": 4,
+      "reg0x18": 0,
+      "rev": 1,
+      "recorded_at": "2026-09-13 22:20:24",
+      "note": "rev=1：用户目测转到 180° —— 换算率的来源"
+    },
+    {
+      "joint": 3,
+      "slave": 3,
+      "deg": 0.0,
+      "pos_counts": 1,
+      "err": 0,
+      "reg0x18": 0,
+      "rev": 2,
+      "recorded_at": "2026-09-13 22:30:29",
+      "note": "断电->上电（J4 置 0 位、J3 保持收拢）后的新零点"
+    },
+    {
+      "joint": 4,
+      "slave": 4,
+      "deg": 0.0,
+      "pos_counts": 1,
+      "err": -10,
+      "reg0x18": 1,
+      "rev": 2,
+      "recorded_at": "2026-09-13 22:30:30",
+      "note": "断电->上电（J4 置 0 位、J3 保持收拢）后的新零点"
+    },
+    {
+      "joint": 4,
+      "slave": 4,
+      "deg": 180.0,
+      "pos_counts": 0,
+      "err": -2,
+      "reg0x18": 0,
+      "rev": 3,
+      "recorded_at": "2026-09-13 22:35:54",
+      "note": "rev=3 上电姿态：用户先把 J4 转到 180° 再上电 -> 本批次零点是物理 180°"
+    },
+    {
+      "joint": 3,
+      "slave": 3,
+      "deg": 0.0,
+      "pos_counts": 0,
+      "err": 0,
+      "reg0x18": 1,
+      "rev": 3,
+      "recorded_at": "2026-09-13 22:35:54",
+      "note": "rev=3 上电姿态：J3 仍在上电时的收拢位 -> 仍是物理 0°"
+    },
+    {
+      "joint": 3,
+      "slave": 3,
+      "deg": 0.0,
+      "pos_counts": 0,
+      "err": 0,
+      "reg0x18": 0,
+      "rev": 4,
+      "recorded_at": "2026-09-13 22:37:46",
+      "note": "rev=4 上电基准：J3 在收拢位 = 物理 0°"
+    },
+    {
+      "joint": 4,
+      "slave": 4,
+      "deg": 0.0,
+      "pos_counts": 1,
+      "err": -5,
+      "reg0x18": 1,
+      "rev": 4,
+      "recorded_at": "2026-09-13 22:37:46",
+      "note": "rev=4 上电基准：J4 在用户置的 0 位 = 物理 0°"
+    },
+    {
+      "joint": 4,
+      "slave": 4,
+      "deg": 90.0,
+      "pos_counts": 876,
+      "err": 20,
+      "reg0x18": 0,
+      "rev": 4,
+      "recorded_at": "2026-09-13 22:40:57",
+      "note": "rev=4: 用户手转到 90°（180° 处有机械干涉）—— J4 换算率来源"
+    },
+    {
+      "joint": 4,
+      "slave": 4,
+      "deg": 45.0,
+      "pos_counts": 460,
+      "err": -29,
+      "reg0x18": 0,
+      "rev": 4,
+      "recorded_at": "2026-09-13 22:45:04",
+      "note": "rev=4: 用户手转到 ~45°（目测有误差）—— 用于区分'真差异'与'目测误差'"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+  GD32F103xx Datasheet 
+88 
+ 
+Symbol Parameter Conditions Min Typ Max Unit 
+tISUD(4) Input setup time SD fpp = 24 MHz 3 — — ns 
+tIHD(4) Input hold time SD fpp = 24 MHz 3 — — ns 
+CMD, D outputs (referenced to CK) in SD default mode 
+tOVD(3) Output valid default time SD fpp = 24 MHz — 2.4 2.8 ns 
+tOHD(3) Output hold default time SD fpp = 24 MHz 0.8 — — ns 
+(1) CLK timing is measured at 50% of VDD. 
+(2) Capacitive load CL = 30 pF. 
+(3) Based on characterization, not tested in production. 
+(4) Guaranteed by design, not tested in production. 
+4.21. CAN characteristics 
+Refer to Table 4-30. I/O port DC characteristics for more details on the input/output 
+alternate function characteristics (CANTX and CANRX). 
+4.22. USBD characteristics 
+Table 4-45. USBD start up time (For GD32F103x4/6/8/B devices) 
+Symbol Parameter Max Unit 
+tSTARTUP(1) USBD startup time 1 μs 
+(1) Guaranteed by design, not tested in production. 
+Table 4-46. USBD start up time (For GD32F103xC/D/E/F/G/I/K devices) 
+Symbol Parameter Max Unit 
+tSTARTUP(1) USBD startup time 1 μs 
+(1) Guaranteed by design, not tested in production. 
+Table 4-47. USBD DC electrical characteristics (For GD32F103x4/6/8/B devices)  
+Symbol Parameter Conditions Min Typ Max Unit 
+Input   
+levels(1) 
+VDD USBD operating voltage — 3 — 3.6 V 
+VDI Differential input sensitivity I(USBDP , USBDM) 0.2 — — 
+V VCM Differential common mode range Includes VDI range 0.8 — 2.5 
+VSE Single ended receiver threshold — 0.8 — 2.0 
+Output 
+levels(2) 
+VOL Static output level low RL of 1.5 kΩ to 3.6 V — 0.064 0.3 
+V 
+VOH Static output level high RL of 15 kΩ to VSS 2.8 3.3 3.6 
+(1) Guaranteed by design, not tested in production. 
+(2) Based on characterization, not tested in production. 
+Table 4-48. USBD DC electrical characteristics (For GD32F103xC/D/E/F/G/I/K devices) 
+Symbol Parameter Conditions Min Typ Max Unit 
+Input   
+levels(1) 
+VDD USBD operating voltage — 3 — 3.6 V 
+VDI Differential input sensitivity I(USBDP , USBDM) 0.2 — — 
+V VCM Differential common mode range Includes VDI range 0.8 — 2.5 
+VSE Single ended receiver threshold — 0.8 — 2.0 
